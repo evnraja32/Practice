@@ -1,0 +1,1 @@
+Through file output i want to generate log reports
