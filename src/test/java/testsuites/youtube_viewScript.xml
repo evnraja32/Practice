@@ -7,7 +7,7 @@
 				<include name="actualTestCases">
 					<class name="testcases.testngtcs.TC021_FirefoxWithGeckoDriverlaunch" />
 				</include>
-				<exclude name="">
+				<exclude name="notRequired">
 					<classes>
 						<class name="testcases.testngtcs.TC017_YouTubeViewsIncreaseTest" />
 						<class name="testcases.testngtcs.TC019_YouTubeViewsIncreaseTest" />
