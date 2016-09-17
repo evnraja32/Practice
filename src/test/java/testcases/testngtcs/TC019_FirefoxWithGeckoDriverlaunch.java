@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import util.AlertAction;
 import wrapper.TestNGWrapper;
 
-public class TC021_FirefoxWithGeckoDriverlaunch extends TestNGWrapper{
+public class TC019_FirefoxWithGeckoDriverlaunch extends TestNGWrapper{
 
 	@BeforeClass
 	public void setWebPageCofig(){

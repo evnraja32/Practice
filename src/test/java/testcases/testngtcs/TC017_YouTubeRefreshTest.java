@@ -8,28 +8,26 @@ import org.testng.annotations.Test;
 
 import wrapper.TestNGWrapper;
 
-public class TC019_YouTubeViewsIncreaseTest extends TestNGWrapper{
+public class TC017_YouTubeRefreshTest extends TestNGWrapper{
 
 	@BeforeClass
 	public void setWebPageCofig(){
-		browser = "INTERNETEXPLORER";
+		browser = "chrome";
 		url = "https://www.youtube.com/watch?v=Pn6R654ZdVc";
 
 	}
 
 
-	@Test(invocationCount=20)
+	@Test(invocationCount=1)
 	public void testCase() {
-//		for(int i = 1 ; i <= 10 ; i++){
 			new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath(".//*[@id='logo-container']/span[1]")));
 			try {
-				Thread.sleep(5000);
+				Thread.sleep(15000);
 				driver.navigate().refresh();
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-//		}
 
 
 	}
