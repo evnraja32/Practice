@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 
 import wrapper.TestNGWrapper;
 
-public class TC017_YouTubeRefreshTest extends TestNGWrapper{
+public class TC017_YouTubeRefreshTestNG extends TestNGWrapper{
 
 	@BeforeClass
 	public void setWebPageCofig(){

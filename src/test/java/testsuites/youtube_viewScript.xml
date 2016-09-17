@@ -5,11 +5,11 @@
 		<groups>
 			<run>
 				<include name="actualTestCases">
-					<class name="testcases.testngtcs.TC019_FirefoxWithGeckoDriverlaunch"></class>
+					<class name="testcases.testngtcs.TC019_FirefoxWithGeckoDriverTestNG"></class>
 				</include>
 				<exclude name="notRequired">
 					<classes>
-						<class name="testcases.testngtcs.TC017_YouTubeRefreshTest"></class>
+						<class name="testcases.testngtcs.TC017_YouTubeRefreshTestNG"></class>
 					</classes>
 				</exclude>
 			</run>

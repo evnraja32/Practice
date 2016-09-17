@@ -2,7 +2,7 @@ package testcases.normaltcs;
 
 import wrapper.ProjectWrapper;
 
-public class TC018_YouTubeRefreshTest extends ProjectWrapper{
+public class TC018_YouTubeRefreshTestNormalTC extends ProjectWrapper{
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

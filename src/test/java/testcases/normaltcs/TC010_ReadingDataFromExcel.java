@@ -23,7 +23,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
  * @author RAJA
  *
  */
-public class TC010_ReadingExccelFromExcel {
+public class TC010_ReadingDataFromExcel {
 
 	public static void main(String[] args) {
 		
