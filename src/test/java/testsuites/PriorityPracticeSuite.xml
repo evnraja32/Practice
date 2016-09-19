@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PriorityPracticeSuite">
+	<test name="PackageLevelTest1" preserve-order="true">
+		<packages>
+			<package name="testcases.testngtcs.priority"></package>
+		</packages>
+	</test> <!-- Test -->
+
+	<test name="PackageLevelTest2" preserve-order="false">
+		<packages>
+			<package name="testcases.testngtcs.priority"></package>
+		</packages>
+	</test> <!-- Test -->
+
+	<test name="ClassLevelTest1" preserve-order="true">
+		<classes>
+			<class name="testcases.testngtcs.priority.TC023_PriorityTestCaseOne" />
+			<class name="testcases.testngtcs.priority.TC024_PriorityTestCaseTwo" />
+		</classes>
+	</test>
+
+	<test name="ClassLevelTest2" preserve-order="false">
+		<classes>
+			<class name="testcases.testngtcs.priority.TC023_PriorityTestCaseOne" />
+			<class name="testcases.testngtcs.priority.TC024_PriorityTestCaseTwo" />
+		</classes>
+	</test>
+
+
+</suite> <!-- PriorityPracticeSuite -->
