@@ -36,15 +36,11 @@
 			<version>3.12</version>
 		</dependency>
 		<dependency>
-			<groupId>com.relevantcodes</groupId>
-			<artifactId>extentreports</artifactId>
-			<version>2.40.2</version>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.5</version>
 		</dependency>
-		<dependency>
-			<groupId>net.sf.fax4j</groupId>
-			<artifactId>fax4j</artifactId>
-			<version>0.43.2</version>
-		</dependency>
+		
 		<dependency>
 			<groupId>com.relevantcodes</groupId>
 			<artifactId>extentreports</artifactId>

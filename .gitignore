@@ -1,6 +1,7 @@
 .settings
 config
 drivers
+lib
 output
 target
 test-output
