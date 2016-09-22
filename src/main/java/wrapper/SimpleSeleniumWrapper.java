@@ -271,7 +271,6 @@ public class SimpleSeleniumWrapper {
 		return select.getFirstSelectedOption().getText();
 	}
 
-
 	public boolean verifyElementText(String targetText) {
 		return element.getText().equals(targetText);
 	}
@@ -280,16 +279,13 @@ public class SimpleSeleniumWrapper {
 		return element.getText().contains(targetText);
 	}
 
-
 	public boolean verifyUrl(String targetURL) {
 		return driver.getCurrentUrl().equals(targetURL); 
 	}
 
-
 	public boolean verifyWebElementDisplay(){
 		return element.isDisplayed(); 
 	}
-
 
 	public boolean verifyWindowTitle(String targetTitle) {
 		return driver.getTitle().equals(targetTitle);
