@@ -10,17 +10,17 @@ public class CRMLoginPage extends SimpleSeleniumWrapper{
 		}
 	}
 
-	public CRMLoginPage enterUserName(){
+	public CRMLoginPage enterUserName(String username){
 
 		findWebElementByID("username");
-		sendKeysToWebElement("DemoSalesManager");
+		sendKeysToWebElement(username);
 
 		return new CRMLoginPage();
 	}
-	public CRMLoginPage enterPassword(){
+	public CRMLoginPage enterPassword(String password){
 
 		findWebElementByID("password");
-		sendKeysToWebElement("crmsfa");
+		sendKeysToWebElement(password);
 
 		return new CRMLoginPage();
 	}
