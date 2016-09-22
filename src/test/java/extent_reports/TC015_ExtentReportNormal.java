@@ -3,7 +3,7 @@ package extent_reports;
 import util.ExtentReporter;
 
 
-public class TC015_ExtentReportNormal_{
+public class TC015_ExtentReportNormal{
 	public static void main(String[] args) {
 		ExtentReporter.startResult();
 		/*
