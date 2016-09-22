@@ -10,11 +10,18 @@ public class CRMHomePage extends SimpleSeleniumWrapper{
 		}
 	}
 	
-	public CRMHomePage clickOnCRM_SFA_Module(){
+	public OpentapsPage clickOnCRM_SFA_Module(){
 
 		findWebElementByLinkText("CRM/SFA");
 		clickOnElement();
+		
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
-		return new CRMHomePage();
+		return new OpentapsPage();
 	}
 }

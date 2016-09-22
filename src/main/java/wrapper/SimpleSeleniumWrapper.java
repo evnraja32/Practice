@@ -28,7 +28,7 @@ import org.openqa.selenium.support.ui.UnexpectedTagNameException;
 
 public class SimpleSeleniumWrapper {
 
-	RemoteWebDriver driver;
+	public static RemoteWebDriver driver;
 	private WebElement element;
 	private String parentWindow = null;
 	private Alert a = null;
