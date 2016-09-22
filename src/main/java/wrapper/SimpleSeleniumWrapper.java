@@ -1,4 +1,4 @@
-package createlead;
+package wrapper;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -26,7 +26,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.UnexpectedTagNameException;
 
-public class ProjectWrapper {
+public class SimpleSeleniumWrapper {
 
 	RemoteWebDriver driver;
 	private WebElement element;
