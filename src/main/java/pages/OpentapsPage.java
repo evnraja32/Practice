@@ -11,7 +11,7 @@ public class OpentapsPage extends SimpleSeleniumWrapper{
 		}
 	}
 	
-	public OpentapsPage pageStatus(){
+	public OpentapsPage getPageStatus(){
 		
 		System.out.println("Successfull login");
 		closeTheBrowser();
