@@ -12,7 +12,7 @@ public class TC025_CRMLoginTestCase {
 		.enterPassword("crmsfa")
 		.clickLoginButton()
 		.clickOnCRM_SFA_Module()
-		.pageStatus();
+		.getPageStatus(); // change method name to getPageStatus();
 	}
 
 }
