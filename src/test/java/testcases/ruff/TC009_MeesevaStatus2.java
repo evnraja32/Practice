@@ -1,32 +1,29 @@
-package testcases.normaltcs;
+package testcases.ruff;
 
 import java.time.LocalTime;
 
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.remote.SessionNotFoundException;
+import org.testng.annotations.Test;
 
 import util.ExcelUtility;
 import wrapper.ProjectWrapper;
 
-public class TC009_MeesevaStatus extends ProjectWrapper{
+public class TC009_MeesevaStatus2 extends ProjectWrapper{
 
 	protected static String url = "http://apdept.meeseva.gov.in/apsdcdeptportal/userinterface/TransactionSearch.aspx?%3fenc=pof+M6UqLs3nPkZqbmvKxcbJO6Qe3lkbZr2XzTKPc2Np0Z6xFnihoogdwwGvgt%2f3iEcvDHcuwDw2hxQjYJefWw%3d%3d";
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	@Test(priority=2,enabled=false) 
+	public static void testMethod() {
 
 		LocalTime time1 = LocalTime.now();
-
-		//		ExcelUtility.prepareExcelSheet("Meeseva", "Sheet1");
-		//		ExcelUtility.createOutputSheet("Meeseva");
 
 		launchApp("chrome", url);
 
 		browserWait();
 
-		int count = 6000;
-		int endPoint = count+250;
+		int count = 6709;
+		int endPoint = 6750;
 		int browserCloseCount=0;
 		for(int i = count ; i <= endPoint ; i++){
 			ExcelUtility.prepareExcelSheet("Meeseva", "Sheet1");
@@ -114,7 +111,7 @@ public class TC009_MeesevaStatus extends ProjectWrapper{
 				LocalTime time2 = LocalTime.now();
 				System.out.println(transactionID+" => "+Status+" => "+(time2.getHour()-time1.getHour())+":"+(Math.abs(time2.getMinute()-time1.getMinute()))+":"+(Math.abs(time2.getSecond()-time1.getSecond())));
 			}
-//			System.out.println();
+			//			System.out.println();
 		}
 		//		ExcelUtility.commitChangesToExcel();
 		closeTheBrowser();

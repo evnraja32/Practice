@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" preserve-order="false">
+  <test name="Test">
+    <classes>
+      <class name="testcases.ruff.TC009_MeesevaStatus"/>
+      <class name="testcases.ruff.TC009_MeesevaStatus2"/>
+      <class name="testcases.ruff.TC009_MeesevaStatus3"/>
+      <class name="testcases.ruff.TC009_MeesevaStatus4"/>
+      <class name="testcases.ruff.TC009_MeesevaStatus5"/>
+      <class name="testcases.ruff.TC009_MeesevaStatus6"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

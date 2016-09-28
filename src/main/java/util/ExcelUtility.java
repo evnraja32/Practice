@@ -30,7 +30,7 @@ public class ExcelUtility {
 	private static FileOutputStream fout = null;
 
 	public static void prepareExcelSheet(String excelFileName,String sheetName){
-		excelFile = new File(dataFolderPath+excelFileName+".xlsx");
+		excelFile = new File(dataOutputFolderPath+excelFileName+".xlsx");
 		try{
 			fis = new FileInputStream(excelFile);
 			workbook = new XSSFWorkbook(fis);
@@ -39,7 +39,7 @@ public class ExcelUtility {
 			}else{
 				sheet = workbook.getSheetAt(0);
 			}
-
+//			fis.close();
 		}catch(IOException e){
 			printException(e, "Error in excel book");
 		}
@@ -102,8 +102,8 @@ public class ExcelUtility {
 
 	public static void createOutputSheet(String excelFileName){
 
-		outputFileName = excelFileName+(LocalDate.now().getYear()+""+LocalDate.now().getMonth()+LocalDate.now().getDayOfMonth()+"-"
-										+LocalTime.now().getHour()+"-"+LocalTime.now().getMinute()+"-"+LocalTime.now().getSecond());
+		outputFileName = excelFileName;//+(LocalDate.now().getYear()+""+LocalDate.now().getMonth()+LocalDate.now().getDayOfMonth()+"-"
+//										+LocalTime.now().getHour()+"-"+LocalTime.now().getMinute()+"-"+LocalTime.now().getSecond());
 		System.out.println(outputFileName);
 			try {
 				fout = new FileOutputStream(dataOutputFolderPath+outputFileName+".xlsx");
@@ -113,12 +113,12 @@ public class ExcelUtility {
 	}
 	public static void commitChangesToExcel(){
 		try {
-			System.out.println(dataOutputFolderPath+outputFileName+".xlsx");
+			fout = new FileOutputStream(excelFile);
+//			System.out.println(dataOutputFolderPath+excelFi+".xlsx");
 			workbook.write(fout);
 
-			fout.close();
 			workbook.close();
-
+			fout.close();
 		} catch (IOException e) {
 			printException(e, "Writing to excel failed");
 		}

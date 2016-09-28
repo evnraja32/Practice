@@ -28,6 +28,8 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.UnexpectedTagNameException;
 
+import util.ExtentReporter;
+
 
 public class ProjectWrapper {
 
@@ -58,7 +60,7 @@ public class ProjectWrapper {
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			driver.get(url);
 
-			//			ExtentReporter.reportStep("Successfully "+browser+" browser initiated\nWeb Page: "+url+" initated","PASS");
+//						ExtentReporter.reportStep("Successfully "+browser+" browser initiated\nWeb Page: "+url+" initated","PASS");
 		}catch(WebDriverException e){
 			//			ExtentReporter.reportStep("Failed to initiate Web Page: "+url+" through \nBrowser : "+browser+
 			//					"Plese find the details below:\n"+e.getMessage(),"Fail");
