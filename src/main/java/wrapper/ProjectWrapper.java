@@ -25,8 +25,10 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.UnexpectedTagNameException;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import util.ExtentReporter;
 
@@ -89,6 +91,7 @@ public class ProjectWrapper {
 	public static void locateElementByID(String id){
 		try{
 			element = driver.findElement(By.id(id));
+//			element = new WebDriverWait(driver, 5).until(ExpectedConditions.presenceOfElementLocated((By.id(id))));
 		}catch(NoSuchElementException e){
 			printException(e, "Unable to find element by ID");
 		}

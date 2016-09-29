@@ -4,6 +4,7 @@ import java.time.LocalTime;
 
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.remote.SessionNotFoundException;
 import org.testng.annotations.Test;
 
@@ -13,16 +14,16 @@ import wrapper.ProjectWrapper;
 public class TC009_MeesevaStatus4 extends ProjectWrapper{
 
 	protected static String url = "http://apdept.meeseva.gov.in/apsdcdeptportal/userinterface/TransactionSearch.aspx?%3fenc=pof+M6UqLs3nPkZqbmvKxcbJO6Qe3lkbZr2XzTKPc2Np0Z6xFnihoogdwwGvgt%2f3iEcvDHcuwDw2hxQjYJefWw%3d%3d";
-	@Test(priority=4)
+	@Test(priority=4,enabled=false)
 	public static void testMethod() {
 
 		LocalTime time1 = LocalTime.now();
 
-		launchApp("EDGE", url);
+		launchApp("chrome", url);
 
 		browserWait();
 
-		int count = 6901;
+		int count = 7127;
 		int endPoint = 7150;
 		int browserCloseCount=0;
 		for(int i = count ; i <= endPoint ; i++){
@@ -30,7 +31,7 @@ public class TC009_MeesevaStatus4 extends ProjectWrapper{
 
 			//1. Enter Transaction Number
 			String transactionID = "TALRBD01160111"+i;//0
-			String ApplicationNo = "RBD01160111"+i;//1
+			String ApplicationNo = "LRBD01160111"+i;//1
 			String Name = "Data Not Found";//3
 			String ServiceName = "Data Not Found";//4
 			String TransactionDate = "Data Not Found";//5
@@ -50,11 +51,10 @@ public class TC009_MeesevaStatus4 extends ProjectWrapper{
 				}
 				locateElementByID("txtAppNo");
 				sendKeysToWebElement(transactionID);
-
+				
 				locateElementByID("btnSearch");
 				clickOnElement();
-
-				browserWait();
+//				browserWait();
 
 				transactionID = getData("lblTransId");
 				ApplicationNo = getData("lblAppNo");
@@ -83,7 +83,10 @@ public class TC009_MeesevaStatus4 extends ProjectWrapper{
 			catch(NullPointerException e){
 				//								System.err.println(e.getMessage());
 				//				continue;
-			}catch(@SuppressWarnings("deprecation") SessionNotFoundException e){
+			}catch(TimeoutException e){
+				
+			}
+			catch(@SuppressWarnings("deprecation") SessionNotFoundException e){
 				//				--i;
 				launchApp("chrome", url);
 
@@ -109,7 +112,7 @@ public class TC009_MeesevaStatus4 extends ProjectWrapper{
 
 				ExcelUtility.commitChangesToExcel();
 				LocalTime time2 = LocalTime.now();
-				System.out.println(transactionID+" => "+Status+" => "+(time2.getHour()-time1.getHour())+":"+(Math.abs(time2.getMinute()-time1.getMinute()))+":"+(Math.abs(time2.getSecond()-time1.getSecond())));
+				System.out.println(transactionID+" => "+Status+" => "+LocalTime.now());//(time2.getHour()-time1.getHour())+":"+(Math.abs(time2.getMinute()-time1.getMinute()))+":"+(Math.abs(time2.getSecond()-time1.getSecond())));
 			}
 			//			System.out.println();
 		}

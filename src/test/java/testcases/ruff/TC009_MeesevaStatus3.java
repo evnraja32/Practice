@@ -13,7 +13,7 @@ import wrapper.ProjectWrapper;
 public class TC009_MeesevaStatus3 extends ProjectWrapper{
 
 	protected static String url = "http://apdept.meeseva.gov.in/apsdcdeptportal/userinterface/TransactionSearch.aspx?%3fenc=pof+M6UqLs3nPkZqbmvKxcbJO6Qe3lkbZr2XzTKPc2Np0Z6xFnihoogdwwGvgt%2f3iEcvDHcuwDw2hxQjYJefWw%3d%3d";
-	@Test(priority=3)
+	@Test(priority=3,enabled=false)
 	public static void testMethod() {
 
 		LocalTime time1 = LocalTime.now();
