@@ -8,6 +8,6 @@ public class NormalClass extends FinalClassDemo{
 
 	public void dispay() {
 
-		member = "l";
+//		member = "l";
 	}
 }

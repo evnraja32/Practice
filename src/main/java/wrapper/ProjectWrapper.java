@@ -24,6 +24,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -43,13 +45,15 @@ public class ProjectWrapper {
 
 	//===== Browser ===================
 	public static void launchApp(String browser, String url){
+		DesiredCapabilities capabilities = new DesiredCapabilities();
+		capabilities.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
 		try{
 			if(browser.equalsIgnoreCase("firefox")){
 				System.setProperty("webdriver.gecko.driver", "./drivers/geckodriver.exe");
 				driver = new FirefoxDriver();
 			}else if(browser.equalsIgnoreCase("chrome")){
 				System.setProperty("webdriver.chorme.driver", "./drivers/chromedriver.exe");
-				driver= new ChromeDriver();
+				driver= new ChromeDriver(capabilities);
 			}else if(browser.equalsIgnoreCase("INTERNETEXPLORER")){
 				System.setProperty("webdriver.ie.driver", "./drivers/IEDriverServer.exe");
 				driver = new InternetExplorerDriver();

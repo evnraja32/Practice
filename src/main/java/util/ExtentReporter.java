@@ -7,19 +7,16 @@ import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
 public class ExtentReporter {
-	
+
 	private static ExtentTest test;
 	private static ExtentReports extent;
 
 	public static void reportStep(String desc, String status) {
 
-		if(status.toUpperCase().equals("PASS")){
-			test.log(LogStatus.PASS, desc);
-		}else if(status.toUpperCase().equals("FAIL")){
-			test.log(LogStatus.FAIL, desc);
-			throw new RuntimeException("FAILED");
-		}else if(status.toUpperCase().equals("INFO")){
-			test.log(LogStatus.INFO, desc);
+		switch(status.toUpperCase().trim()){
+		case "PASS": test.log(LogStatus.PASS, desc); break;
+		case "FAIL": test.log(LogStatus.FAIL, desc); throw new RuntimeException("FAILED");
+		case "INFO": test.log(LogStatus.INFO, desc); break;
 		}
 	}
 

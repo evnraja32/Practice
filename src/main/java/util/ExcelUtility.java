@@ -92,6 +92,13 @@ public class ExcelUtility {
 		return row;
 	}
 
+	public static void appendCellValueAt(int rownum,int cellNum, String cellValue){
+		try{
+			sheet.getRow(rownum).createCell(cellNum).setCellValue(cellValue);
+		}catch(Exception e){
+			printException(e, "Work Sheet Creation Failed in creating cell value");
+		} 
+	}
 	public static void setCellValueAt(int cellNum, String cellValue){
 		try{
 			row.createCell(cellNum).setCellValue(cellValue);

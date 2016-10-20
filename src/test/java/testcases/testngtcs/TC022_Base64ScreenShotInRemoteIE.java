@@ -15,7 +15,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 
-public class TC022_ScreenShotInRemoteIE {
+public class TC022_Base64ScreenShotInRemoteIE {
 
 	@Test//(invocationCount = 3, threadPoolSize = 2)	
 	public void fte() throws WebDriverException, IOException {

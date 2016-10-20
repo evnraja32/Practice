@@ -7,6 +7,7 @@ import java.util.stream.Stream;
 
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.remote.SessionNotFoundException;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeTest;
@@ -17,13 +18,13 @@ import util.ExcelUtility;
 import wrapper.ProjectWrapper;
 
 @SuppressWarnings("deprecation")
-public class TC009_MeesevaStatus5 extends ProjectWrapper{
+public class TC009_MeesevaIteratorDataProvider extends ProjectWrapper{
 
 	protected static String url = "http://apdept.meeseva.gov.in/apsdcdeptportal/userinterface/TransactionSearch.aspx?%3fenc=pof+M6UqLs3nPkZqbmvKxcbJO6Qe3lkbZr2XzTKPc2Np0Z6xFnihoogdwwGvgt%2f3iEcvDHcuwDw2hxQjYJefWw%3d%3d";
 	protected static int browserCloseCount=0;
 	@BeforeTest
 	public void beforeTest(){
-		launchApp("chrome", url);
+		launchApp("firefox", url);
 		browserWait();
 	}
 
@@ -48,7 +49,7 @@ public class TC009_MeesevaStatus5 extends ProjectWrapper{
 		String District = "Data Not Found";//13
 		String Mandal = "Data Not Found";//14
 		try{
-			if(browserCloseCount==20){
+			if(browserCloseCount==250){
 				browserCloseCount=0;
 				closeTheBrowser();
 			}
@@ -80,8 +81,10 @@ public class TC009_MeesevaStatus5 extends ProjectWrapper{
 		}
 		catch(NoSuchElementException e){
 		}
+		
 		catch(NullPointerException e){
-		}catch(SessionNotFoundException e){
+		}
+		catch(WebDriverException e){
 			launchApp("chrome", url);
 			browserWait();
 		}
@@ -111,12 +114,9 @@ public class TC009_MeesevaStatus5 extends ProjectWrapper{
 
 	@DataProvider(name = "getTransIDs")
 	public static Iterator<String[]> dataIterator() {
-        return dataStream().iterator();
+        return IntStream.rangeClosed(6000, 6123).mapToObj(value -> new String[]{"TALRBD01160111"+value}).iterator();
     }
 
-    private static Stream<String[]> dataStream() {
-        return IntStream.rangeClosed(7221, 7440).mapToObj(value -> new String[]{"TALRBD01160111"+value});
-    }
 
 	public  String getData(String locatorValue){
 		locateElementByID(locatorValue);

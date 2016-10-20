@@ -15,7 +15,7 @@ public class TC021_GridSampleIE {
 		DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
 		desiredCapabilities.setBrowserName("internet explorer");
 
-		URL remoteAddress = new URL("http://192.168.1.104:4444/wd/hub");
+		URL remoteAddress = new URL("http://192.168.23.131:4444/wd/hub");
 
 		RemoteWebDriver driver = new RemoteWebDriver(remoteAddress,desiredCapabilities);
 
