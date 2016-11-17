@@ -9,7 +9,8 @@ public class MiscAddingTwoSortedArrays {
 		int b[] = { 2, 4, 7, 15, 16, 18, 20, 25, 32, 34, 36, 38, 39, 55, 56, 57, 67,
 				     0, 0 , 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 , 0 , 0 , 0};
 		
-		
+		/*System.out.println(a.length);
+		System.out.println(b.length);*/
 		for( int m = (a.length-1); m >= 0 ; m--){
 			
 			if( a[m]> b[m] && a[m] > b[m*2+1] && b[m*2] > b[m]) {
@@ -20,7 +21,7 @@ public class MiscAddingTwoSortedArrays {
 			
 			}
 			
-			else if (a[m] < b[m] && ){
+			else if (a[m] < b[m] && b[m] < b[m*2+1]){
 				
 				b[m*2+1] = b[m];
 				
