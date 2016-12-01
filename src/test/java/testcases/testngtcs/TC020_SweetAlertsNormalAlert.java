@@ -69,6 +69,7 @@ public class TC020_SweetAlertsNormalAlert extends TestNGWrapper{
 		clickOnElement();
 
 		takeScreenShot("ScreenShot3");
+		
 
 		locateElementByCssSelector("div.sa-confirm-button-container button");
 		clickOnElement();
