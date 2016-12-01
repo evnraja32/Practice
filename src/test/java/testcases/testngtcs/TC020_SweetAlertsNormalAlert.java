@@ -15,7 +15,6 @@ public class TC020_SweetAlertsNormalAlert extends TestNGWrapper{
 
 	}
 
-
 	@Test()
 	public void testCase() {
 		locateElementByXpath("//div[@class='showcase normal']/button");
