@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -17,7 +18,9 @@ import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.NoSuchFrameException;
 import org.openqa.selenium.NoSuchWindowException;
+import org.openqa.selenium.OutputType;
 import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -493,9 +496,20 @@ public class ProjectWrapper {
 
 	public static  void  printException(Throwable e, String errorMessage) {
 
-		//		System.out.println(errorMessage);
-		//		e.printStackTrace();
+				System.out.println(errorMessage);
+//				e.printStackTrace();
 
+	}
+	
+	public static void takeScreenShot(String imageName){
+		try{
+		FileUtils.copyFile(((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE),new File("./"+imageName+".png") );
+		
+		}catch(IOException e){
+			printException(e, "Failed to take Screen Shot: "+imageName);
+		}
+		
+		
 	}
 
 }
