@@ -1,17 +1,12 @@
 package wrapper;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
-import org.apache.poi.xssf.usermodel.XSSFCell;
-import org.apache.poi.xssf.usermodel.XSSFRow;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
@@ -30,16 +25,13 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.UnexpectedTagNameException;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
 import util.ExtentReporter;
 import util.TargetBrowser;
 
 
-public class ProjectWrapper{
+public class PageFactoryWrapper {
 
 	protected static String browser ;
 	protected static String url;
@@ -69,7 +61,7 @@ public class ProjectWrapper{
 			}
 
 			driver.manage().window().maximize();
-			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+			waitTillPageloads();
 			driver.get(url);
 
 			ExtentReporter.reportStep(browser+" has initiated<br>Web Application: "+url+" successfully","PASS");
@@ -80,8 +72,7 @@ public class ProjectWrapper{
 		}
 	}
 
-	public static void browserWait(){
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	public static void waitTillPageloads() {
 		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
 	}
 
@@ -98,161 +89,161 @@ public class ProjectWrapper{
 
 	//===== finding elements ============
 
-	public static void locateElementByID(String id){
-		try{
-			element = driver.findElement(By.id(id));
-			//			element = new WebDriverWait(driver, 5).until(ExpectedConditions.presenceOfElementLocated((By.id(id))));
-		}catch(NoSuchElementException e){
-			printException(e, "Unable to find element by ID");
+		public static void locateElementByID(String id){
+			try{
+				element = driver.findElement(By.id(id));
+				//			element = new WebDriverWait(driver, 5).until(ExpectedConditions.presenceOfElementLocated((By.id(id))));
+			}catch(NoSuchElementException e){
+				printException(e, "Unable to find element by ID");
+			}
 		}
-	}
 
-	public static void locateElementByName(String name){
-		try{
-			element = driver.findElement(By.name(name));
-		}catch(NoSuchElementException e){
-			printException(e, "Unable to find element by name");
+		public static void locateElementByName(String name){
+			try{
+				element = driver.findElement(By.name(name));
+			}catch(NoSuchElementException e){
+				printException(e, "Unable to find element by name");
+			}
 		}
-	}
 
-	public static void locateElementByClassName(String className){
-		try{
-			element = driver.findElement(By.className(className));
-		}catch(NoSuchElementException e){
-			printException(e, "Unable to find element by class name");
+		public static void locateElementByClassName(String className){
+			try{
+				element = driver.findElement(By.className(className));
+			}catch(NoSuchElementException e){
+				printException(e, "Unable to find element by class name");
+			}
 		}
-	}
 
-	public static void locateElementByLinkText(String linkText){
-		try{
-			element = driver.findElement(By.linkText(linkText));
-		}catch(NoSuchElementException e){
-			printException(e, "Unable to find element by linkText");
+		public static void locateElementByLinkText(String linkText){
+			try{
+				element = driver.findElement(By.linkText(linkText));
+			}catch(NoSuchElementException e){
+				printException(e, "Unable to find element by linkText");
+			}
 		}
-	}
 
-	public static void locateElementByPartialLinkText(String partialLinkText){
-		try{
-			element = driver.findElement(By.partialLinkText(partialLinkText));
-		}catch(NoSuchElementException e){
-			printException(e, "Unable to find element by partialLink");
+		public static void locateElementByPartialLinkText(String partialLinkText){
+			try{
+				element = driver.findElement(By.partialLinkText(partialLinkText));
+			}catch(NoSuchElementException e){
+				printException(e, "Unable to find element by partialLink");
+			}
 		}
-	}
 
-	public static void locateElementByXpath(String xpath){
-		try{
-			element = driver.findElement(By.xpath(xpath));
-		}catch(NoSuchElementException e){
-			printException(e, "Unable to find element by xpath");
+		public static void locateElementByXpath(String xpath){
+			try{
+				element = driver.findElement(By.xpath(xpath));
+			}catch(NoSuchElementException e){
+				printException(e, "Unable to find element by xpath");
+			}
 		}
-	}
 
-	public static void locateElementByCssSelector(String cssSelector){
-		try{
-			element = driver.findElement(By.cssSelector(cssSelector));
-		}catch(NoSuchElementException e){
-			printException(e, "Unable to find element by css selector");
+		public static void locateElementByCssSelector(String cssSelector){
+			try{
+				element = driver.findElement(By.cssSelector(cssSelector));
+			}catch(NoSuchElementException e){
+				printException(e, "Unable to find element by css selector");
+			}
 		}
-	}
 
-	public static void locateElementByTagName(String tagName){
-		try{
-			element = driver.findElement(By.tagName(tagName));
-		}catch(NoSuchElementException e){
-			printException(e, "Unable to find element by tagname");
+		public static void locateElementByTagName(String tagName){
+			try{
+				element = driver.findElement(By.tagName(tagName));
+			}catch(NoSuchElementException e){
+				printException(e, "Unable to find element by tagname");
+			}
 		}
-	}
 
-	public static WebElement getWebElement(){
-		return element;
-	}
-
-	public static void setWebElement(WebElement element){
-		ProjectWrapper.element = element;
-	}
-
-	public static List<WebElement> locateElementsByID(String id){
-		List<WebElement> elements = null;
-		try{
-			elements = driver.findElements(By.id(id));
-		}catch(NoSuchElementException e){
-			printException(e, "Unable to find elements by ID");
+		public static WebElement getWebElement(){
+			return element;
 		}
-		return elements;
-	}
 
-	public static List<WebElement> locateElementsByName(String name){
-		List<WebElement> elements = null;
-		try{
-			elements = driver.findElements(By.name(name));
-		}catch(NoSuchElementException e){
-			printException(e, "Unable to find elements by name");
+		public static void setWebElement(WebElement element){
+			ProjectWrapper.element = element;
 		}
-		return elements;
-	}
 
-	public static List<WebElement> locateElementsByClassName(String className){
-		List<WebElement> elements = null;
-		try{
-			elements = driver.findElements(By.className(className));
-		}catch(NoSuchElementException e){
-			printException(e, "Unable to find elements by class name");
+		public static List<WebElement> locateElementsByID(String id){
+			List<WebElement> elements = null;
+			try{
+				elements = driver.findElements(By.id(id));
+			}catch(NoSuchElementException e){
+				printException(e, "Unable to find elements by ID");
+			}
+			return elements;
 		}
-		return elements;
-	}
 
-	public static List<WebElement> locateElementsByLinkText(String linkText){
-		List<WebElement> elements = null;
-		try{
-			elements = driver.findElements(By.linkText(linkText));
-		}catch(NoSuchElementException e){
-			printException(e, "Unable to find elements by link text");
+		public static List<WebElement> locateElementsByName(String name){
+			List<WebElement> elements = null;
+			try{
+				elements = driver.findElements(By.name(name));
+			}catch(NoSuchElementException e){
+				printException(e, "Unable to find elements by name");
+			}
+			return elements;
 		}
-		return elements;
-	}
 
-	public static List<WebElement> locateElementsByPartialLinkText(String partialLinkText){
-		List<WebElement> elements = null;
-		try{
-			elements = driver.findElements(By.partialLinkText(partialLinkText));
-		}catch(NoSuchElementException e){
-			printException(e, "Unable to find elements by partial Link Text");
+		public static List<WebElement> locateElementsByClassName(String className){
+			List<WebElement> elements = null;
+			try{
+				elements = driver.findElements(By.className(className));
+			}catch(NoSuchElementException e){
+				printException(e, "Unable to find elements by class name");
+			}
+			return elements;
 		}
-		return elements;
-	}
 
-	public static List<WebElement> locateElementsByCssSelector(String cssSelector){
-		List<WebElement> elements = null;
-		try{
-			elements = driver.findElements(By.cssSelector(cssSelector));
-		}catch(NoSuchElementException e){
-			printException(e, "Unable to find elements by Css Selector");
+		public static List<WebElement> locateElementsByLinkText(String linkText){
+			List<WebElement> elements = null;
+			try{
+				elements = driver.findElements(By.linkText(linkText));
+			}catch(NoSuchElementException e){
+				printException(e, "Unable to find elements by link text");
+			}
+			return elements;
 		}
-		return elements;
-	}
 
-	public static List<WebElement> locateElementsByXpath(String xpath){
-		List<WebElement> elements = null;
-		try{
-			elements = driver.findElements(By.xpath(xpath));
-		}catch(NoSuchElementException e){
-			printException(e, "Unable to find elements by xpath");
+		public static List<WebElement> locateElementsByPartialLinkText(String partialLinkText){
+			List<WebElement> elements = null;
+			try{
+				elements = driver.findElements(By.partialLinkText(partialLinkText));
+			}catch(NoSuchElementException e){
+				printException(e, "Unable to find elements by partial Link Text");
+			}
+			return elements;
 		}
-		return elements;
-	}
 
-	public static List<WebElement> locateElementsByTagName(String tagName){
-		List<WebElement> elements = null;
-		try{
-			elements = driver.findElements(By.tagName(tagName));
-		}catch(NoSuchElementException e){
-			printException(e, "Unable to find elements by TagName");
+		public static List<WebElement> locateElementsByCssSelector(String cssSelector){
+			List<WebElement> elements = null;
+			try{
+				elements = driver.findElements(By.cssSelector(cssSelector));
+			}catch(NoSuchElementException e){
+				printException(e, "Unable to find elements by Css Selector");
+			}
+			return elements;
 		}
-		return elements;
-	}
 
-	//====== finding elements ===========
+		public static List<WebElement> locateElementsByXpath(String xpath){
+			List<WebElement> elements = null;
+			try{
+				elements = driver.findElements(By.xpath(xpath));
+			}catch(NoSuchElementException e){
+				printException(e, "Unable to find elements by xpath");
+			}
+			return elements;
+		}
 
+		public static List<WebElement> locateElementsByTagName(String tagName){
+			List<WebElement> elements = null;
+			try{
+				elements = driver.findElements(By.tagName(tagName));
+			}catch(NoSuchElementException e){
+				printException(e, "Unable to find elements by TagName");
+			}
+			return elements;
+		}
+
+		//====== finding elements ===========
+	
 	//====== Browser Actions ============
 	public static void sendKeysToWebElement(String keysToSend){
 		element.clear();
@@ -425,7 +416,6 @@ public class ProjectWrapper{
 
 	//====== Handling Alerts ============
 
-
 	public static void switchToWindowAlert(){
 		try{
 			a = driver.switchTo().alert();
@@ -437,7 +427,6 @@ public class ProjectWrapper{
 		//		return a.getText();
 	}
 
-
 	public static void manageAlert(String action){
 		if(action.equalsIgnoreCase("accept")){
 			a.accept();
@@ -447,59 +436,11 @@ public class ProjectWrapper{
 		}
 	}
 
-
-
 	public static void enterAlertText(String keysToSend){
 		a.sendKeys(keysToSend);
 	}
 
 	//====== Handling Alerts ============
-
-	//====== Handling Excel Files =======
-
-	public static XSSFSheet prepareExcelSheet(String fileName,String sheetName){
-		XSSFWorkbook workbook = null;
-		XSSFSheet sheet = null;
-
-		try{
-			FileInputStream fis = new FileInputStream(new File("./data/"+fileName+".xlsx"));
-			workbook = new XSSFWorkbook(fis);
-
-			sheet = workbook.getSheet(sheetName);
-
-		}catch(IOException e){
-			printException(e, "Error in excel book");
-		}
-		return sheet;
-	}
-
-	public static XSSFRow getRowAt(XSSFSheet excelSheet,int rowIndex){
-		return excelSheet.getRow(rowIndex);
-	}
-
-	public static XSSFCell getCellAt(XSSFRow currentRow,int cellnum){
-		return currentRow.getCell(cellnum);
-	}
-
-	public static XSSFCell readExcel(String filename,String sheetName, int rowIndex, int colnum) 
-	{
-		XSSFRow currentRow = null;
-		try{
-			FileInputStream data = new FileInputStream(new File("./data/"+filename+".xlsx"));
-
-			XSSFWorkbook workbook = new XSSFWorkbook(data);
-
-			XSSFSheet sheet = workbook.getSheet(sheetName);
-
-			currentRow = sheet.getRow(rowIndex);
-
-		}catch(IOException e){
-			printException(e,"Error in retriving data");
-		}
-		return currentRow.getCell(colnum);
-	}
-
-	//====== Handling Excel Files =======
 
 	public static  void  printException(Throwable e, String errorMessage) {
 
@@ -508,14 +449,17 @@ public class ProjectWrapper{
 
 	}
 
-	public static void takeScreenShot(String imageName){
+	public static String takeScreenShot(String imageName){
 		try{
-			FileUtils.copyFile(((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE),new File("./"+imageName+".png") );
+			FileUtils.copyFile(((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE),new File("./output/reports/images/"+imageName+".jpg") );
 
-		}catch(IOException e){
-			printException(e, "Failed to take Screen Shot: "+imageName);
+		} catch (WebDriverException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
-
+		
+		return "H://Practice/output/reports/images/"+imageName+".jpg";
 
 	}
 

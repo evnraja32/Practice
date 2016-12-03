@@ -1,4 +1,4 @@
-package pages;
+package pages.crm.opentaps;
 
 import wrapper.SimpleSeleniumWrapper;
 

@@ -10,7 +10,7 @@ import org.testng.annotations.DataProvider;
 
 import util.ExtentReporter;
 
-public class TestNGWrapper extends ProjectWrapper{
+public class TestNGPageFactoryWrapper extends PageFactoryWrapper{
 	protected static String testCaseName,testCaseDesc;
 	@BeforeSuite
 	public void beforeSuite() {

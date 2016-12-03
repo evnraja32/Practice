@@ -4,7 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-public class AssertionsTestInTestNG {
+public class TC026_AssertionsTestInTestNG {
 	public static int index = 0;
 
 	@Test(priority = -1)

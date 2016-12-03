@@ -1,6 +1,6 @@
 package testcases.normaltcs.crmpage;
 
-import pages.CRMSiteLauncher;
+import pages.crm.opentaps.CRMSiteLauncher;
 
 public class TC025_CRMLoginTestCase {
 
