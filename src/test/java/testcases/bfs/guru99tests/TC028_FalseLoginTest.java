@@ -12,25 +12,26 @@ public class TC028_FalseLoginTest extends TestNGPageFactoryWrapper{
 
 	@BeforeClass
 	public void setWebPageCofig(){
-		testCaseName = "Field Functionality";
+		testCaseName = "TC028 False Login Test";
 		testCaseDesc = "Verify ";
 		browser = TargetBrowser.FIREFOX;
 		url = "http://demo.guru99.com/V4";
-		System.out.println("before class "+browser + "   "+ url);
 	}
-
 
 	@Test
 	public void testMethod() {
 		try{
-		new Guru99BankHomePage()
-		.enterUserName("mngr55367")
-		.enterPassword("EbaqY")
-		.clickResetBTN();
+			new Guru99BankHomePage()
+			.enterUserName("mngr55367")
+			.enterPassword("EbaqY")
+			.clickLoginBTN();
 		}catch(RuntimeException e){
 			switchToWindowAlert();
 			manageAlert(AlertAction.ACCEPT);
-			
+
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch bloc
+			e.printStackTrace();
 		}
 	}
 

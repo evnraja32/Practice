@@ -18,7 +18,8 @@ public class ExtentReporter  extends PageFactoryWrapper{
 		takeScreenShot(""+imageName);
 		
 		switch(status.toUpperCase().trim()){
-		case "PASS": test.log(LogStatus.PASS, desc+test.addScreenCapture(takeScreenShot(""+imageName))); break;
+		case "PASS": test.log(LogStatus.PASS, desc);//+test.addScreenCapture(takeScreenShot(""+imageName)));
+					 break;
 		case "FAIL": test.log(LogStatus.FAIL, desc+test.addScreenCapture(takeScreenShot(""+imageName))); 
 					 endResult(); 
 					 throw new RuntimeException("FAILED");

@@ -28,7 +28,7 @@ public class Guru99BankHomePage extends PageFactoryWrapper {
 	public Guru99BankHomePage enterUserName(String userName){
 		loginTF.sendKeys(userName);
 		ExtentReporter.reportStep("Entered Username: "+userName,"PASS");
-		return this;
+		return new Guru99BankHomePage();
 	}
 
 	@FindBy(how=How.CSS,using="input[name='password']")
@@ -38,7 +38,7 @@ public class Guru99BankHomePage extends PageFactoryWrapper {
 		passwordTF.clear();
 		passwordTF.sendKeys(password);
 		ExtentReporter.reportStep("Entered Password: "+password,"PASS");
-		return this;
+		return new Guru99BankHomePage();
 	}
 
 	@FindBy(how=How.CSS,using="input[name='btnLogin']")
@@ -57,7 +57,7 @@ public class Guru99BankHomePage extends PageFactoryWrapper {
 	public Guru99BankHomePage clickResetBTN(){
 		resetBTN.click();
 		ExtentReporter.reportStep("Successfully Clicked Reset Button","PASS");
-		return this;
+		return new Guru99BankHomePage();
 	}
 
 

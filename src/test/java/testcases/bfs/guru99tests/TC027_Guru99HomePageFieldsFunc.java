@@ -11,11 +11,10 @@ public class TC027_Guru99HomePageFieldsFunc extends TestNGPageFactoryWrapper{
 
 	@BeforeClass
 	public void setWebPageCofig(){
-		testCaseName = "Field Functionality";
+		testCaseName = "TC027 Field Functionality Test";
 		testCaseDesc = "Verify ";
 		browser = TargetBrowser.FIREFOX;
 		url = "http://demo.guru99.com/V4";
-		System.out.println("before class "+browser + "   "+ url);
 	}
 
 

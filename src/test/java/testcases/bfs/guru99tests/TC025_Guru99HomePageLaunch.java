@@ -10,11 +10,10 @@ public class TC025_Guru99HomePageLaunch extends TestNGPageFactoryWrapper{
 
 	@BeforeClass
 	public void setWebPageCofig(){
-		testCaseName = "Launch HomePage";
+		testCaseName = "TC025 Home Launch HomePage";
 		testCaseDesc = "Verify Launching Bank Home Page";
 		browser = TargetBrowser.FIREFOX;
 		url = "http://demo.guru99.com/V4";
-		System.out.println("before class "+browser + "   "+ url);
 	}
 
 
