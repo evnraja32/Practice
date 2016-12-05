@@ -43,98 +43,98 @@ public class ManagersMenu extends PageFactoryWrapper {
 
 	@FindBy(linkText="Manager")
 	WebElement managerLink;
-	public ManagerHomePage gotoManagerPage(){
+	public ManagerHomePage clickManagerPageLink(){
 		managerLink.click();
 		return new ManagerHomePage();
 	}
 
 	@FindBy(linkText="New Customer")
 	WebElement newCustomerLink;
-	public NewCustomerPage gotoNewCustomerPage(){
+	public NewCustomerPage clickNewCustomerPageLink(){
 		newCustomerLink.click();
 		return new NewCustomerPage();
 	}
 
 	@FindBy(linkText="Edit Customer")
 	WebElement editCustomerLink;
-	public EditCustomerPage gotoEditCustomerPage(){
+	public EditCustomerPage clickEditCustomerPageLink(){
 		editCustomerLink.click();
 		return new EditCustomerPage();
 	}
 
 	@FindBy(linkText="Delete Customer")
 	WebElement deleteCustomerLink;
-	public DeleteCustomerPage gotoDeleteCustomerPage(){
+	public DeleteCustomerPage clickDeleteCustomerPageLink(){
 		deleteCustomerLink.click();
 		return new DeleteCustomerPage();
 	}
 
 	@FindBy(linkText="New Account")
 	WebElement newAccountLink;
-	public NewAccountPage gotoNewAccountPage(){
+	public NewAccountPage clickNewAccountPageLink(){
 		newAccountLink.click();
 		return new NewAccountPage();
 	}
 
 	@FindBy(linkText="Edit Account")
 	WebElement editAccountLink;
-	public EditAccountPage gotoEditAccountPage(){
+	public EditAccountPage clickEditAccountPageLink(){
 		editAccountLink.click();
 		return new EditAccountPage();
 	}
 
 	@FindBy(linkText="Delete Account")
 	WebElement deleteAccountLink;
-	public DeleteAccountPage gotoDeleteAccountPage(){
+	public DeleteAccountPage clcikDeleteAccountPageLink(){
 		deleteAccountLink.click();
 		return new DeleteAccountPage();
 	}
 
 	@FindBy(linkText="Deposit")
 	WebElement depositLink;
-	public DepositPage gotoDepositPage(){
+	public DepositPage clickDepositPageLink(){
 		depositLink.click();
 		return new DepositPage();
 	}
 
 	@FindBy(linkText="Withdrawal")
 	WebElement withdrawalLink;
-	public WithdrawalPage gotoWithdrawalPage(){
+	public WithdrawalPage clickWithdrawalPageLink(){
 		withdrawalLink.click();
 		return new WithdrawalPage();
 	}
 
 	@FindBy(linkText="Fund Transfer")
 	WebElement fundTransferLink;
-	public FundTransferPage gotoFundTransferPage(){
+	public FundTransferPage clickFundTransferPageLink(){
 		fundTransferLink.click();
 		return new FundTransferPage();
 	}
 
 	@FindBy(linkText="Change Password")
 	WebElement changePasswordLink;
-	public ChangePasswordPage gotoChangePasswordPage(){
+	public ChangePasswordPage clickChangePasswordPageLink(){
 		changePasswordLink.click();
 		return new ChangePasswordPage();
 	}
 
 	@FindBy(linkText="Balance Enquiry")
 	WebElement balanceEnquiryLink;
-	public BalanceEnquiryPage gotoBalanceEnquiryPage(){
+	public BalanceEnquiryPage clickBalanceEnquiryPageLink(){
 		balanceEnquiryLink.click();
 		return new BalanceEnquiryPage();
 	}
 
 	@FindBy(linkText="Mini Statement")
 	WebElement miniStatementLink;
-	public MiniStatementPage gotoMiniStatementPage(){
+	public MiniStatementPage clickMiniStatementPageLink(){
 		miniStatementLink.click();
 		return new MiniStatementPage();
 	}
 
 	@FindBy(linkText="Customised Statement")
 	WebElement customisedStatementLink;
-	public CustomisedStatementPage gotoCustomisedStatementPage(){
+	public CustomisedStatementPage clickCustomisedStatementPageLink(){
 		newCustomerLink.click();
 		return new CustomisedStatementPage();
 	}

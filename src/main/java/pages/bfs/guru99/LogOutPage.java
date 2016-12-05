@@ -1,5 +1,16 @@
 package pages.bfs.guru99;
 
-public class LogOutPage {
-//Guru99 Bank Logout Output Page
+import org.openqa.selenium.support.PageFactory;
+
+import wrapper.PageFactoryWrapper;
+
+public class LogOutPage extends PageFactoryWrapper{
+
+	public LogOutPage(){
+		PageFactory.initElements(driver, this);
+	}
+	
+	public ManagersMenu fromManagersMenu(){
+		return new ManagersMenu();
+	}
 }

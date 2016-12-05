@@ -1,9 +1,17 @@
 package pages.bfs.guru99;
 
-public class NewCustomerPage {
+import org.openqa.selenium.support.PageFactory;
 
-	public NewCustomerPage() {
-		// TODO Auto-generated constructor stub
+import wrapper.PageFactoryWrapper;
+
+public class NewCustomerPage extends PageFactoryWrapper{
+
+	public NewCustomerPage(){
+		PageFactory.initElements(driver, this);
+	}
+	
+	public ManagersMenu fromManagersMenu(){
+		return new ManagersMenu();
 	}
 
 }

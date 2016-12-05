@@ -1,5 +1,16 @@
 package pages.bfs.guru99;
 
-public class MiniStatementPage {
+import org.openqa.selenium.support.PageFactory;
 
+import wrapper.PageFactoryWrapper;
+
+public class MiniStatementPage extends PageFactoryWrapper{
+
+	public MiniStatementPage(){
+		PageFactory.initElements(driver, this);
+	}
+	
+	public ManagersMenu fromManagersMenu(){
+		return new ManagersMenu();
+	}
 }
