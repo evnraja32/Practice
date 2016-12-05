@@ -2,7 +2,6 @@
 config
 drivers
 lib
-output
 target
 test-output
 .classpath

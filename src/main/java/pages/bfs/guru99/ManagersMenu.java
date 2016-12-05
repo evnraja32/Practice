@@ -2,149 +2,149 @@ package pages.bfs.guru99;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.How;
-import org.testng.annotations.Factory;
+import org.openqa.selenium.support.PageFactory;
 
-import util.ExtentReporter;
-import util.TargetBrowser;
 import wrapper.PageFactoryWrapper;
 
 public class ManagersMenu extends PageFactoryWrapper {
 
 	public ManagersMenu() {
-		// TODO Auto-generated constructor stub
+		PageFactory.initElements(driver, this);
 	}
 
-	public static void main(String[] args) {
-		String testCaseName = "TC025 Home Launch HomePage";
-		String testCaseDesc = "Verify Launching Bank Home Page";
-		browser = TargetBrowser.FIREFOX;
-		url = "http://demo.guru99.com/V4";
-
-		ExtentReporter.startResult();
-		ExtentReporter.startTestCase(testCaseName, testCaseDesc);
-
-		launchApp(browser, url); 
-		try {
-			new Guru99BankHomePage()
-			.enterUserName("mngr55367")
-			.enterPassword("EbaqYma")
-			.clickLoginBTN();
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-		for(WebElement ele : locateElementsByTagName("a")){
-			System.out.println(ele.getText());
-		}
-	}
-
-
-	@FindBy(linkText="Manager")
+	@FindBy(linkText = "Manager")
 	WebElement managerLink;
-	public ManagerHomePage clickManagerPageLink(){
+
+	public ManagerHomePage clickManagerPageLink() throws InterruptedException {
 		managerLink.click();
+		Thread.sleep(5000);
 		return new ManagerHomePage();
 	}
 
-	@FindBy(linkText="New Customer")
+	@FindBy(linkText = "New Customer")
 	WebElement newCustomerLink;
-	public NewCustomerPage clickNewCustomerPageLink(){
+
+	public NewCustomerPage clickNewCustomerPageLink() throws InterruptedException {
 		newCustomerLink.click();
+		Thread.sleep(5000);
 		return new NewCustomerPage();
 	}
 
-	@FindBy(linkText="Edit Customer")
+	@FindBy(linkText = "Edit Customer")
 	WebElement editCustomerLink;
-	public EditCustomerPage clickEditCustomerPageLink(){
+
+	public EditCustomerPage clickEditCustomerPageLink() throws InterruptedException {
 		editCustomerLink.click();
+		Thread.sleep(5000);
 		return new EditCustomerPage();
 	}
 
-	@FindBy(linkText="Delete Customer")
+	@FindBy(linkText = "Delete Customer")
 	WebElement deleteCustomerLink;
-	public DeleteCustomerPage clickDeleteCustomerPageLink(){
+
+	public DeleteCustomerPage clickDeleteCustomerPageLink() throws InterruptedException {
 		deleteCustomerLink.click();
+		Thread.sleep(5000);
 		return new DeleteCustomerPage();
 	}
 
-	@FindBy(linkText="New Account")
+	@FindBy(linkText = "New Account")
 	WebElement newAccountLink;
-	public NewAccountPage clickNewAccountPageLink(){
+
+	public NewAccountPage clickNewAccountPageLink() throws InterruptedException {
 		newAccountLink.click();
+		Thread.sleep(5000);
 		return new NewAccountPage();
 	}
 
-	@FindBy(linkText="Edit Account")
+	@FindBy(linkText = "Edit Account")
 	WebElement editAccountLink;
-	public EditAccountPage clickEditAccountPageLink(){
+
+	public EditAccountPage clickEditAccountPageLink() throws InterruptedException {
 		editAccountLink.click();
+		Thread.sleep(5000);
 		return new EditAccountPage();
 	}
 
-	@FindBy(linkText="Delete Account")
+	@FindBy(linkText = "Delete Account")
 	WebElement deleteAccountLink;
-	public DeleteAccountPage clcikDeleteAccountPageLink(){
+
+	public DeleteAccountPage clcikDeleteAccountPageLink() throws InterruptedException {
 		deleteAccountLink.click();
+		Thread.sleep(5000);
 		return new DeleteAccountPage();
 	}
 
-	@FindBy(linkText="Deposit")
+	@FindBy(linkText = "Deposit")
 	WebElement depositLink;
-	public DepositPage clickDepositPageLink(){
+
+	public DepositPage clickDepositPageLink() throws InterruptedException {
 		depositLink.click();
+		Thread.sleep(5000);
 		return new DepositPage();
 	}
 
-	@FindBy(linkText="Withdrawal")
+	@FindBy(linkText = "Withdrawal")
 	WebElement withdrawalLink;
-	public WithdrawalPage clickWithdrawalPageLink(){
+
+	public WithdrawalPage clickWithdrawalPageLink() throws InterruptedException {
 		withdrawalLink.click();
+		Thread.sleep(5000);
 		return new WithdrawalPage();
 	}
 
-	@FindBy(linkText="Fund Transfer")
+	@FindBy(linkText = "Fund Transfer")
 	WebElement fundTransferLink;
-	public FundTransferPage clickFundTransferPageLink(){
+
+	public FundTransferPage clickFundTransferPageLink() throws InterruptedException {
 		fundTransferLink.click();
+		Thread.sleep(5000);
 		return new FundTransferPage();
 	}
 
-	@FindBy(linkText="Change Password")
+	@FindBy(linkText = "Change Password")
 	WebElement changePasswordLink;
-	public ChangePasswordPage clickChangePasswordPageLink(){
+
+	public ChangePasswordPage clickChangePasswordPageLink() throws InterruptedException {
 		changePasswordLink.click();
+		Thread.sleep(5000);
 		return new ChangePasswordPage();
 	}
 
-	@FindBy(linkText="Balance Enquiry")
+	@FindBy(linkText = "Balance Enquiry")
 	WebElement balanceEnquiryLink;
-	public BalanceEnquiryPage clickBalanceEnquiryPageLink(){
+
+	public BalanceEnquiryPage clickBalanceEnquiryPageLink() throws InterruptedException {
 		balanceEnquiryLink.click();
+		Thread.sleep(5000);
 		return new BalanceEnquiryPage();
 	}
 
-	@FindBy(linkText="Mini Statement")
+	@FindBy(linkText = "Mini Statement")
 	WebElement miniStatementLink;
-	public MiniStatementPage clickMiniStatementPageLink(){
+
+	public MiniStatementPage clickMiniStatementPageLink() throws InterruptedException {
 		miniStatementLink.click();
+		Thread.sleep(5000);
 		return new MiniStatementPage();
 	}
 
-	@FindBy(linkText="Customised Statement")
+	@FindBy(linkText = "Customised Statement")
 	WebElement customisedStatementLink;
-	public CustomisedStatementPage clickCustomisedStatementPageLink(){
-		newCustomerLink.click();
+
+	public CustomisedStatementPage clickCustomisedStatementPageLink() throws InterruptedException {
+		customisedStatementLink.click();
+		Thread.sleep(5000);
 		return new CustomisedStatementPage();
 	}
 
-	@FindBy(linkText="Log out")
+	@FindBy(linkText = "Log out")
 	WebElement logOutLink;
-	public LogOutPage gotoLogOutPage(){
+
+	public LogOutPage clickLogOutPageLink() throws InterruptedException {
 		logOutLink.click();
+		Thread.sleep(5000);
 		return new LogOutPage();
 	}
-
 
 }

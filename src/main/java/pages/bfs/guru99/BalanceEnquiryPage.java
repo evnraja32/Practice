@@ -7,51 +7,72 @@ import org.openqa.selenium.support.PageFactory;
 import util.ExtentReporter;
 import wrapper.PageFactoryWrapper;
 
-public class BalanceEnquiryPage extends PageFactoryWrapper{
+/**
+ * @author RAJA
+ *
+ */
+public class BalanceEnquiryPage extends PageFactoryWrapper {
 
-	public BalanceEnquiryPage(){
+	public BalanceEnquiryPage() {
 		String expTitle = "Guru99 Bank Balance Enquiry Page";
-		if(!verifyWindowTitle(expTitle)){
-			ExtentReporter.reportStep("<p style=\"color:red\">Expected Page: "+expTitle+"<br>"
-					+ "Actual Page: "+currentWindowTitle()+"</p>","FATAL");
-		}else{
+		if (!verifyWindowTitle(expTitle)) {
+			ExtentReporter.reportStep("<p style=\"color:red\">Expected Page: " + expTitle + "<br>" + "Actual Page: "
+					+ currentWindowTitle() + "</p>", "FATAL");
+		} else {
 			PageFactory.initElements(driver, this);
-			ExtentReporter.reportStep("<p style=\"color:green\">\""+expTitle+"\" Page Landed</p>","PASS");
+			ExtentReporter.reportStep("<p style=\"color:green\">\"" + expTitle + "\" Page Landed</p>", "PASS");
 		}
 	}
-	
-	public ManagersMenu fromManagersMenu(){
+
+	public ManagersMenu fromManagersMenu() {
 		return new ManagersMenu();
 	}
-	
-	@FindBy(css="input[type='submit']")
-	WebElement submitBTN;
-	public BalanceEnquiryPage pressSubmitBTN(String accountNo){
-		submitBTN.click();
-		return  this;
-	}
-	
-	@FindBy(css="input[type='reset']")
-	WebElement resetBTN;
-	public BalanceEnquiryPage pressResetBTN(String accountNo){
-		resetBTN.click();
-		return  this;
-	}
-	
-	@FindBy(linkText="Home")
+
+	@FindBy(linkText = "Home")
 	WebElement homeLink;
-	public ManagerHomePage clickHomeLink(String accountNo){
+
+	public ManagerHomePage clickHomeLink() {
 		homeLink.click();
-		return  new ManagerHomePage();
+		return new ManagerHomePage();
 	}
-	
-	@FindBy(css="input[type='text']")
+
+	@FindBy(linkText = "Continue")
+	WebElement continueLink;
+
+	public ManagerHomePage clickContinueLink() {
+		continueLink.click();
+		return new ManagerHomePage();
+	}
+
+	@FindBy(css = "input[type='text']")
 	WebElement accountNoTF;
-	public BalanceEnquiryPage enterAccountNumber(String accountNo){
+
+	public BalanceEnquiryPage enterAccountNumber(String accountNo) {
 		accountNoTF.clear();
 		accountNoTF.sendKeys(accountNo);
-		return  this;
+		return this;
 	}
-	
-	
+
+	@FindBy(css = "input[type='submit']")
+	WebElement submitBTN;
+
+	public BalanceEnquiryPage pressSubmitBTN() {
+		submitBTN.click();
+		return this;
+	}
+
+	@FindBy(css = "input[type='reset']")
+	WebElement resetBTN;
+
+	public BalanceEnquiryPage pressResetBTN() {
+		resetBTN.click();
+		return this;
+	}
+
+	public String getAccountBalance() throws InterruptedException {
+		Thread.sleep(5000);
+		locateElementByXpath("//td[text()='Balance']/following-sibling::td");
+		return element.getText();
+	}
+
 }
