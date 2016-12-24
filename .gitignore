@@ -1,10 +1,12 @@
 .settings
-config
 drivers
 lib
+output
+reports
 target
 test-output
 .classpath
 .project
 tmpFax
 tmpFax.0
+Text1.xls

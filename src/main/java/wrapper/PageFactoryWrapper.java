@@ -65,11 +65,12 @@ public class PageFactoryWrapper {
 
 			ExtentReporter.reportStep(browser + " has initiated<br>Web Application: " + url + " successfully", "PASS");
 		} catch (WebDriverException e) {
+//			System.err.println(e.printStackTrace(););
 			ExtentReporter.reportStep(
 					"Failed to initiate Web Page: " + url + " through Browser : " + browser
 							+ "<br>Plese find the details below:<br><p style=\"color:red;\">" + e.getMessage() + "</p>",
 					"FATAL");
-			// printException(e,"Unable to launch app");
+			 printException(e,"Unable to launch app");
 		}
 	}
 

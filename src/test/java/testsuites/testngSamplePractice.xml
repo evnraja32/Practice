@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="testngSamplePracticeSuite" parallel="false">
+
+	<groups>
+		<run>
+			<include name="Smoke" />
+			<include name="Sanity" />
+			<include name="Regression" />
+		</run>
+	</groups>
+	
+	<listeners>
+		<listener class-name="testcases.testngtcs.priority.newsuite.TestLiseteners" />
+	</listeners>
+	
+	<test name="PackageLevelTest">
+		<packages>
+			<package name="testcases.testngtcs.priority.newsuite"></package>
+		</packages>
+	</test> <!-- Test -->
+
+</suite> <!-- Suite -->
