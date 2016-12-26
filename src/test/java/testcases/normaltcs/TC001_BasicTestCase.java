@@ -16,10 +16,10 @@ public class TC001_BasicTestCase {
  * @param args
  */
 	public static void main(String[] args) {
-		System.setProperty("webdriver.firefox.marionette", "./drivers/geckodriver.exe");
+		System.setProperty("webdriver.gecko.driver", "./drivers/geckodriver.exe");
 		WebDriver driver = new FirefoxDriver();
 		
-		driver.get("file:///H:/Practice/src/main/java/htmlpages/registerpage.html");
+		driver.get("file:///H:/Practice/src/main/resources/codingbasics/htmlpages/registerpage.html");
 		
 		//Step1: identify firstname
 		WebElement firstName = driver.findElement(By.id("firstname"));
@@ -35,6 +35,12 @@ public class TC001_BasicTestCase {
 		lastName.sendKeys("Demo1");
 		
 		clickButton.click();
+		try {
+			Thread.sleep(30000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
 		

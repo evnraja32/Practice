@@ -25,6 +25,7 @@ public class TestNGPageFactoryWrapper extends PageFactoryWrapper{
 	public void beforeMethod() {
 		ExtentReporter.startTestCase(testCaseName, testCaseDesc);
 		launchApp(browser, url);
+		
 	}
 
 	@AfterMethod
