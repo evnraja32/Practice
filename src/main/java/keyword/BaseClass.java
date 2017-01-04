@@ -30,7 +30,7 @@ public class BaseClass {
 				break;
 			}
 
-			ExtentReporter.reportStep("browser open::" + browser, "INFO");
+			ExtentReporter.reportStep("browser open::" + browser, "INFO");  //reporting step
 
 			driver.get(url);
 			ExtentReporter.reportStep("Navigate to URL::" + url, "PASS");
