@@ -21,8 +21,8 @@ public class TC025_Guru99HomePageLaunch extends TestNGPageFactoryWrapper{
 	public void testMethod() {
 		try {
 			new Guru99BankHomePage()
-			.enterUserName("mngr55367")
-			.enterPassword("EbaqYma")
+			.enterUserName("mngr59123")
+			.enterPassword("mYdUhUp")
 			.clickLoginBTN();
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block

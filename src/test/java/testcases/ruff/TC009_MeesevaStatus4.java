@@ -3,9 +3,9 @@ package testcases.ruff;
 import java.time.LocalTime;
 
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.SessionNotCreatedException;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TimeoutException;
-import org.openqa.selenium.remote.SessionNotFoundException;
 import org.testng.annotations.Test;
 
 import util.ExcelUtility;
@@ -86,7 +86,7 @@ public class TC009_MeesevaStatus4 extends ProjectWrapper{
 			}catch(TimeoutException e){
 				
 			}
-			catch(@SuppressWarnings("deprecation") SessionNotFoundException e){
+			catch(@SuppressWarnings("deprecation") SessionNotCreatedException e){
 				//				--i;
 				launchApp("chrome", url);
 

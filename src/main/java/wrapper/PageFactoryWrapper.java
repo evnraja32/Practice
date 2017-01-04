@@ -46,11 +46,11 @@ public class PageFactoryWrapper {
 		capabilities.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
 		try {
 			if (browser.equals(TargetBrowser.FIREFOX)) {
-				System.setProperty("webdriver.gecko.driver", "./drivers/geckodriver.exe");
+				System.setProperty("webdriver.gecko.driver", "./drivers/geckodriver-0.10.0.exe");
 				driver = new FirefoxDriver();
 			} else if (browser.equals(TargetBrowser.CHROME)) {
-				System.setProperty("webdriver.chorme.driver", "./drivers/chromeV54/chromedriver.exe");
-				driver = new ChromeDriver(capabilities);
+				System.setProperty("webdriver.chrome.driver", "./drivers/chromeV54/chromedriver.exe");
+				driver = new ChromeDriver();
 			} else if (browser.equals(TargetBrowser.INTERNETEXPLORER)) {
 				System.setProperty("webdriver.ie.driver", "./drivers/IEDriverServer.exe");
 				driver = new InternetExplorerDriver();
@@ -58,12 +58,11 @@ public class PageFactoryWrapper {
 				System.setProperty("webdriver.edge.driver", "./drivers/MicrosoftWebDriver.exe");
 				driver = new EdgeDriver();
 			}
-			
+
 			driver.manage().window().maximize();
 			waitTillPageloads();
 			driver.get(url);
-			
-			
+
 			ExtentReporter.reportStep(browser + " has initiated<br>Web Application: " + url + " successfully", "PASS");
 		} catch (WebDriverException e) {
 			e.printStackTrace();
@@ -71,7 +70,7 @@ public class PageFactoryWrapper {
 					"Failed to initiate Web Page: " + url + " through Browser : " + browser
 							+ "<br>Plese find the details below:<br><p style=\"color:red;\">" + e.getMessage() + "</p>",
 					"FATAL");
-//			 printException(e,"Unable to launch app");
+			// printException(e,"Unable to launch app");
 		}
 	}
 

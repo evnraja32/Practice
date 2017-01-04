@@ -3,8 +3,9 @@ package testcases.normaltcs;
 import java.time.LocalTime;
 
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.SessionNotCreatedException;
 import org.openqa.selenium.StaleElementReferenceException;
-import org.openqa.selenium.remote.SessionNotFoundException;
+
 
 import util.ExcelUtility;
 import wrapper.ProjectWrapper;
@@ -86,7 +87,7 @@ public class TC009_MeesevaStatus extends ProjectWrapper{
 			catch(NullPointerException e){
 				//								System.err.println(e.getMessage());
 				//				continue;
-			}catch(@SuppressWarnings("deprecation") SessionNotFoundException e){
+			}catch(@SuppressWarnings("deprecation") SessionNotCreatedException e){
 				//				--i;
 				launchApp("chrome", url);
 

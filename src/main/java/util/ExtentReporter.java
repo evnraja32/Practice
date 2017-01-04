@@ -15,7 +15,7 @@ public class ExtentReporter  extends PageFactoryWrapper{
 	public static void reportStep(String desc, String status) {
 
 		long imageName = (long) Math.floor(Math.random() * 900000000L) + 10000000L;
-		takeScreenShot(""+imageName);
+//		takeScreenShot(""+imageName);
 		
 		switch(status.toUpperCase().trim()){
 		case "PASS": test.log(LogStatus.PASS, desc);//+test.addScreenCapture(takeScreenShot(""+imageName)));
@@ -23,7 +23,7 @@ public class ExtentReporter  extends PageFactoryWrapper{
 		case "FAIL": test.log(LogStatus.FAIL, desc+test.addScreenCapture(takeScreenShot(""+imageName))); 
 					 endResult(); 
 					 throw new RuntimeException("FAILED");
-		case "FATAL": test.log(LogStatus.FATAL, desc+test.addScreenCapture(takeScreenShot(""+imageName))); 
+		case "FATAL": test.log(LogStatus.FATAL, desc); 
 					  endResult(); 
 					  throw new RuntimeException("FATAL Error");
 		case "INFO": test.log(LogStatus.INFO, desc); break;

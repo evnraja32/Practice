@@ -13,7 +13,7 @@ public class TC030_BalanceEnqueryScreenNavTest extends TestNGPageFactoryWrapper{
 
 	@BeforeClass
 	public void setWebPageCofig(){
-		testCaseName = "TC029 Balance Enquery Screen Navigation Test";
+		testCaseName = "TC030 Balance Enquery Screen Navigation Test";
 		testCaseDesc = "To Check whether the web page is properly navigating to balance enquery web page and returning the remaining amount or not";
 		browser = TargetBrowser.FIREFOX;
 		url = "http://demo.guru99.com/V4";
