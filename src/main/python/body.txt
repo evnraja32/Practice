@@ -1,0 +1,1 @@
+This the content to be sent through the mail
