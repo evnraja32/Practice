@@ -4,6 +4,6 @@ lib
 output
 output/reports
 target
-test-output
+test-output/
 .classpath
 .project
