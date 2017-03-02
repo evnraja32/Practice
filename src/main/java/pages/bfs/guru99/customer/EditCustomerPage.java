@@ -1,14 +1,15 @@
-package pages.bfs.guru99;
+package pages.bfs.guru99.customer;
 
 import org.openqa.selenium.support.PageFactory;
 
+import pages.bfs.guru99.ManagersMenu;
 import util.ExtentReporter;
 import wrapper.PageFactoryWrapper;
 
-public class EditAccountPage extends PageFactoryWrapper{
+public class EditCustomerPage extends PageFactoryWrapper{
 
-	public EditAccountPage() {
-		String expTitle = "Guru99 Edit Account Page";
+	public EditCustomerPage() {
+		String expTitle = "Guru99 Bank Edit Customer Page";
 		if (!verifyWindowTitle(expTitle)) {
 			ExtentReporter.reportStep("<p style=\"color:red\">Expected Page: " + expTitle + "<br>" + "Actual Page: "
 					+ currentWindowTitle() + "</p>", "FATAL");

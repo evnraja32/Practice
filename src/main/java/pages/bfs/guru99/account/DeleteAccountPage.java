@@ -1,24 +1,26 @@
-package pages.bfs.guru99;
+package pages.bfs.guru99.account;
 
 import org.openqa.selenium.support.PageFactory;
 
+import pages.bfs.guru99.ManagersMenu;
 import util.ExtentReporter;
 import wrapper.PageFactoryWrapper;
 
-public class CustomisedStatementPage extends PageFactoryWrapper{
+public class DeleteAccountPage extends PageFactoryWrapper {
 
-	public CustomisedStatementPage() {
-		String expTitle = "Guru99 Bank Statement Page";
+	public DeleteAccountPage() {
+		String expTitle = "Guru99 Bank Delete Account Page";
 		if (!verifyWindowTitle(expTitle)) {
 			ExtentReporter.reportStep("<p style=\"color:red\">Expected Page: " + expTitle + "<br>" + "Actual Page: "
 					+ currentWindowTitle() + "</p>", "FATAL");
 		} else {
 			PageFactory.initElements(driver, this);
 			ExtentReporter.reportStep("<p style=\"color:green\">\"" + expTitle + "\" Page Landed</p>", "PASS");
+
 		}
 	}
-	
-	public ManagersMenu fromManagersMenu(){
+
+	public ManagersMenu fromManagersMenu() {
 		return new ManagersMenu();
 	}
 }

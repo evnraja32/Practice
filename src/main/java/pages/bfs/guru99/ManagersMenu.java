@@ -4,6 +4,20 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import pages.bfs.guru99.account.DeleteAccountPage;
+import pages.bfs.guru99.account.EditAccountPage;
+import pages.bfs.guru99.account.NewAccountPage;
+import pages.bfs.guru99.customer.DeleteCustomerPage;
+import pages.bfs.guru99.customer.EditCustomerPage;
+import pages.bfs.guru99.customer.NewCustomerPage;
+import pages.bfs.guru99.settings.ChangePasswordPage;
+import pages.bfs.guru99.settings.LogOutPage;
+import pages.bfs.guru99.transaction.BalanceEnquiryPage;
+import pages.bfs.guru99.transaction.CustomisedStatementPage;
+import pages.bfs.guru99.transaction.DepositPage;
+import pages.bfs.guru99.transaction.FundTransferPage;
+import pages.bfs.guru99.transaction.MiniStatementPage;
+import pages.bfs.guru99.transaction.WithdrawalPage;
 import wrapper.PageFactoryWrapper;
 
 public class ManagersMenu extends PageFactoryWrapper {

@@ -4,8 +4,8 @@ import org.testng.annotations.Test;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 
-import pages.bfs.guru99.BalanceEnquiryPage;
 import pages.bfs.guru99.Guru99BankHomePage;
+import pages.bfs.guru99.transaction.BalanceEnquiryPage;
 import util.TargetBrowser;
 import wrapper.TestNGPageFactoryWrapper;
 

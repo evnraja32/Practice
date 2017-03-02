@@ -1,18 +1,15 @@
-package pages.bfs.guru99;
+package pages.bfs.guru99.transaction;
 
 import org.openqa.selenium.support.PageFactory;
 
-import util.AlertAction;
+import pages.bfs.guru99.ManagersMenu;
 import util.ExtentReporter;
 import wrapper.PageFactoryWrapper;
 
-public class LogOutPage extends PageFactoryWrapper {
+public class CustomisedStatementPage extends PageFactoryWrapper{
 
-	public LogOutPage() {
-		switchToWindowAlert();
-		manageAlert(AlertAction.ACCEPT);
-
-		String expTitle = "Guru99 Bank Logout Output Page";
+	public CustomisedStatementPage() {
+		String expTitle = "Guru99 Bank Statement Page";
 		if (!verifyWindowTitle(expTitle)) {
 			ExtentReporter.reportStep("<p style=\"color:red\">Expected Page: " + expTitle + "<br>" + "Actual Page: "
 					+ currentWindowTitle() + "</p>", "FATAL");
@@ -22,11 +19,7 @@ public class LogOutPage extends PageFactoryWrapper {
 		}
 	}
 	
-	public Guru99BankHomePage isHomePage(){
-		return new Guru99BankHomePage();
-	}
-
-	public ManagersMenu fromManagersMenu() {
+	public ManagersMenu fromManagersMenu(){
 		return new ManagersMenu();
 	}
 }

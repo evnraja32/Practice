@@ -1,9 +1,11 @@
-package pages.bfs.guru99;
+package pages.bfs.guru99.transaction;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import pages.bfs.guru99.ManagerHomePage;
+import pages.bfs.guru99.ManagersMenu;
 import util.ExtentReporter;
 import wrapper.PageFactoryWrapper;
 

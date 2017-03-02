@@ -1,14 +1,15 @@
-package pages.bfs.guru99;
+package pages.bfs.guru99.transaction;
 
 import org.openqa.selenium.support.PageFactory;
 
+import pages.bfs.guru99.ManagersMenu;
 import util.ExtentReporter;
 import wrapper.PageFactoryWrapper;
 
-public class DeleteAccountPage extends PageFactoryWrapper {
+public class WithdrawalPage extends PageFactoryWrapper{
 
-	public DeleteAccountPage() {
-		String expTitle = "Guru99 Bank Delete Account Page";
+	public WithdrawalPage() {
+		String expTitle = "Guru99 Bank Amount Withdrawal Page";
 		if (!verifyWindowTitle(expTitle)) {
 			ExtentReporter.reportStep("<p style=\"color:red\">Expected Page: " + expTitle + "<br>" + "Actual Page: "
 					+ currentWindowTitle() + "</p>", "FATAL");
@@ -18,8 +19,8 @@ public class DeleteAccountPage extends PageFactoryWrapper {
 
 		}
 	}
-
-	public ManagersMenu fromManagersMenu() {
+	
+	public ManagersMenu fromManagersMenu(){
 		return new ManagersMenu();
 	}
 }
