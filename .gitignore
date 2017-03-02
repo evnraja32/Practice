@@ -2,7 +2,8 @@
 drivers
 lib
 output
+output/reports
 target
-test-ouptut
+test-output
 .classpath
 .project
