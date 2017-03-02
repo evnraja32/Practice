@@ -4,6 +4,8 @@ lib
 output
 output/reports
 target
-./test-output/
+test-output/Default suite
+test-output/junitreports
+test-output/old
 .classpath
 .project
