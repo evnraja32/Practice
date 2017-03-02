@@ -2,11 +2,7 @@
 drivers
 lib
 output
-reports
 target
-test-output
+test-ouptut
 .classpath
 .project
-tmpFax
-tmpFax.0
-Text1.xls

@@ -162,7 +162,7 @@ public class PageFactoryWrapper {
 	}
 
 	public static void setWebElement(WebElement element) {
-		ProjectWrapper.element = element;
+		PageFactoryWrapper.element = element;
 	}
 
 	public static List<WebElement> locateElementsByID(String id) {
