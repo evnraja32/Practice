@@ -2,6 +2,8 @@ package testcases.bfs.guru99tests;
 
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
+
 import pages.bfs.guru99.Guru99BankHomePage;
 import util.TargetBrowser;
 import wrapper.TestNGPageFactoryWrapper;
@@ -18,11 +20,12 @@ public class TC025_Guru99HomePageLaunch extends TestNGPageFactoryWrapper{
 
 
 	@Test
-	public void testMethod() {
+	@Parameters({"username","password"})
+	public void testMethod(String username,String password) {
 		try {
 			new Guru99BankHomePage()
-			.enterUserName("mngr68605")
-			.enterPassword("sygAzud")
+			.enterUserName(username)
+			.enterPassword(password)
 			.clickLoginBTN();
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block

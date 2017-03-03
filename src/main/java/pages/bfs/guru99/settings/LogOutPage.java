@@ -3,7 +3,6 @@ package pages.bfs.guru99.settings;
 import org.openqa.selenium.support.PageFactory;
 
 import pages.bfs.guru99.Guru99BankHomePage;
-import pages.bfs.guru99.ManagersMenu;
 import util.AlertAction;
 import util.ExtentReporter;
 import wrapper.PageFactoryWrapper;
@@ -28,7 +27,7 @@ public class LogOutPage extends PageFactoryWrapper {
 		return new Guru99BankHomePage();
 	}
 
-	public ManagersMenu fromManagersMenu() {
+	/*public ManagersMenu fromManagersMenu() {
 		return new ManagersMenu();
-	}
+	}*/
 }

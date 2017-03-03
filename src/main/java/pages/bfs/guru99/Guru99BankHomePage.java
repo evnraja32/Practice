@@ -46,9 +46,14 @@ public class Guru99BankHomePage extends PageFactoryWrapper {
 
 	public ManagerHomePage clickLoginBTN() throws InterruptedException{
 		loginBTN.click();
+
 		ExtentReporter.reportStep("Successfully Pressed Login Button","PASS");
 		Thread.sleep(5000);
-		return new ManagerHomePage();
+		if(switchToWindowAlert()){
+			throw new RuntimeException();
+		}else{
+			return new ManagerHomePage();
+		}
 	}
 
 	@FindBy(how=How.CSS,using="input[name='btnReset']")

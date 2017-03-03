@@ -1,6 +1,7 @@
 package testcases.bfs.guru99tests;
 
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import pages.bfs.guru99.Guru99BankHomePage;
@@ -19,10 +20,11 @@ public class TC027_Guru99HomePageFieldsFunc extends TestNGPageFactoryWrapper{
 
 
 	@Test
-	public void testMethod() {
+	@Parameters({"username","password"})
+	public void testMethod(String username,String password) {
 		new Guru99BankHomePage()
-		.enterUserName("mngr55367")
-		.enterPassword("EbaqYma")
+		.enterUserName(username)
+		.enterPassword(password)
 		.clickResetBTN();
 	}
 

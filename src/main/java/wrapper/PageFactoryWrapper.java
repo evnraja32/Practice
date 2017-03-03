@@ -418,13 +418,15 @@ public class PageFactoryWrapper {
 
 	// ====== Handling Alerts ============
 
-	public static void switchToWindowAlert() {
+	public static boolean switchToWindowAlert() {
 		try {
 			a = driver.switchTo().alert();
+			return true;
 		} catch (NoAlertPresentException e) {
 			printException(e, "No alert on the screen");
 		}
 		// return a.getText();
+		return false;
 	}
 
 	public static void manageAlert(String action) {
@@ -438,14 +440,12 @@ public class PageFactoryWrapper {
 	public static void enterAlertText(String keysToSend) {
 		a.sendKeys(keysToSend);
 	}
-
 	// ====== Handling Alerts ============
 
 	public static void printException(Throwable e, String errorMessage) {
 
 		System.out.println(errorMessage);
 		e.printStackTrace();
-
 	}
 
 	public static String takeScreenShot(String imageName) {

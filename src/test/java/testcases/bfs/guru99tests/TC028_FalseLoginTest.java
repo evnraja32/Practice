@@ -22,13 +22,11 @@ public class TC028_FalseLoginTest extends TestNGPageFactoryWrapper{
 	public void testMethod() {
 		try{
 			new Guru99BankHomePage()
-			.enterUserName("mngr55367")
-			.enterPassword("EbaqY")
+			.enterUserName("Invalid Username")
+			.enterPassword("Invalid Password")
 			.clickLoginBTN();
 		}catch(RuntimeException e){
-			switchToWindowAlert();
 			manageAlert(AlertAction.ACCEPT);
-
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch bloc
 			e.printStackTrace();

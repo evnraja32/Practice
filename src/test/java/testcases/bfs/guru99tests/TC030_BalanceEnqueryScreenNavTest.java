@@ -3,6 +3,7 @@ package testcases.bfs.guru99tests;
 import org.testng.annotations.Test;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 
 import pages.bfs.guru99.Guru99BankHomePage;
 import pages.bfs.guru99.transaction.BalanceEnquiryPage;
@@ -21,11 +22,12 @@ public class TC030_BalanceEnqueryScreenNavTest extends TestNGPageFactoryWrapper{
 
 
 	@Test
-	public void testMethod() {
+	@Parameters({"username","password"})
+	public void testMethod(String username,String password) {
 		try {
 			BalanceEnquiryPage balanceEnquiryPage = new Guru99BankHomePage()
-			.enterUserName("mngr55367")
-			.enterPassword("EbaqYma")
+			.enterUserName(username)
+			.enterPassword(password)
 			.clickLoginBTN()
 			.fromManagersMenu()
 			.clickBalanceEnquiryPageLink()

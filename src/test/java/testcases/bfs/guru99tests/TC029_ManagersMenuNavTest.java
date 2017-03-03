@@ -3,6 +3,7 @@ package testcases.bfs.guru99tests;
 import org.testng.annotations.Test;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 
 import pages.bfs.guru99.Guru99BankHomePage;
 import pages.bfs.guru99.transaction.BalanceEnquiryPage;
@@ -13,19 +14,20 @@ public class TC029_ManagersMenuNavTest extends TestNGPageFactoryWrapper{
 
 	@BeforeClass
 	public void setWebPageCofig(){
-		testCaseName = "TC029 Balance Enquery Screen Navigation Test";
-		testCaseDesc = "To Check whether the web page is properly navigating to balance enquery web page and returning the remaining amount or not";
+		testCaseName = "TC029 Managers Menu Navigation Test";
+		testCaseDesc = "To Check whether the web page is properly navigating to all the Menu items displayed";
 		browser = TargetBrowser.FIREFOX;
 		url = "http://demo.guru99.com/V4";
 	}
 
 
 	@Test
-	public void testMethod() {
+	@Parameters({"username","password"})
+	public void testMethod(String username,String password) {
 		try {
 		new Guru99BankHomePage()
-			.enterUserName("mngr55367")
-			.enterPassword("EbaqYma")
+			.enterUserName(username)
+			.enterPassword(password)
 			.clickLoginBTN()
 			.fromManagersMenu()
 			.clcikDeleteAccountPageLink()
