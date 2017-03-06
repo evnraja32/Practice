@@ -41,8 +41,10 @@ public class BalanceEnquiryPage extends PageFactoryWrapper {
 	@FindBy(linkText = "Continue")
 	WebElement continueLink;
 
-	public ManagerHomePage clickContinueLink() {
+	public ManagerHomePage clickContinueLink() throws InterruptedException {
 		continueLink.click();
+		Thread.sleep(5000);
+		
 		return new ManagerHomePage();
 	}
 

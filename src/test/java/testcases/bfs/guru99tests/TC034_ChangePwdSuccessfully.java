@@ -8,12 +8,12 @@ import pages.bfs.guru99.Guru99BankHomePage;
 import util.TargetBrowser;
 import wrapper.TestNGPageFactoryWrapper;
 
-public class TC031_MiniStmtNavTest extends TestNGPageFactoryWrapper {
+public class TC034_ChangePwdSuccessfully extends TestNGPageFactoryWrapper {
 
 	@BeforeClass
 	public void setWebPageCofig() {
-		testCaseName = "TC031 Mini Statement Screen Navigation Test";
-		testCaseDesc = "To Check whether the web page is properly navigating to Mini Statement Page";
+		testCaseName = "TC034 Change Pwd Successfully";
+		testCaseDesc = "To Check functionality of submit button";
 		browser = TargetBrowser.EDGE;
 		url = "http://demo.guru99.com/V4";
 	}
@@ -22,14 +22,12 @@ public class TC031_MiniStmtNavTest extends TestNGPageFactoryWrapper {
 	@Parameters({ "username", "password" })
 	public void testMethod(String username, String password) {
 		try {
-			new Guru99BankHomePage().enterUserName(username)
-			.enterPassword(password)
-			.clickLoginBTN()
-			.fromManagersMenu()
-			.clickMiniStatementPageLink()
-			.fromManagersMenu()
-			.clickLogOutPageLink();
+			 new Guru99BankHomePage().enterUserName(username)
+					.enterPassword(password).clickLoginBTN().fromManagersMenu().clickChangePasswordPageLink()
+					.enterOldPassword("R@ja136900").enterNewPassword("RaJ@136900").enterConfirmPassword("RaJ@136900")
+					.pressSubmitButton().enterUserName(username).enterPassword(password).clickLoginBTN();
 
+			
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

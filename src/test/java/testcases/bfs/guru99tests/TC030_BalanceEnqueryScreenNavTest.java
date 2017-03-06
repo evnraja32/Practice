@@ -31,10 +31,10 @@ public class TC030_BalanceEnqueryScreenNavTest extends TestNGPageFactoryWrapper{
 			.clickLoginBTN()
 			.fromManagersMenu()
 			.clickBalanceEnquiryPageLink()
-			.enterAccountNumber("19782")
+			.enterAccountNumber("24390")
 			.pressSubmitBTN();
 			
-			Assert.assertEquals(balanceEnquiryPage.getAccountBalance(), "150");
+			Assert.assertEquals(balanceEnquiryPage.getAccountBalance(), "1500");
 			
 			balanceEnquiryPage.
 			clickContinueLink()

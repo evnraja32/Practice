@@ -52,18 +52,33 @@ public class ChangePasswordPage extends PageFactoryWrapper {
 		return new ChangePasswordPage();
 	}
 
-	public Guru99BankHomePage pressSubmitButton(String newPassword) {
+	public Guru99BankHomePage pressSubmitButton() {
 		locateElementByXpath(prop.getProperty("submitBT.LV"));
 		clickOnElement();
 
 		return new Guru99BankHomePage();
 	}
 
-	public ChangePasswordPage pressResetButton(String confirmPassowrd) {
+	public ChangePasswordPage pressResetButton() {
 		locateElementByXpath(prop.getProperty("resetBT.LV"));
 		clickOnElement();
-		
+
 		return new ChangePasswordPage();
+	}
+
+	public String getOldPassword() {
+
+		return driver.findElement(By.xpath(prop.getProperty("oldPWDTF.LV"))).getText();
+	}
+
+	public String getNewPassword() {
+
+		return driver.findElement(By.xpath(prop.getProperty("newPWDTF.LV"))).getText();
+	}
+
+	public String getConfirmPassword() {
+
+		return driver.findElement(By.xpath(prop.getProperty("confirmPWDTF.LV"))).getText();
 	}
 
 }

@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite" parallel="false">
-	<test name="PackageLevelTest" preserve-order="false">
+	<test name="PackageLevelTest" preserve-order="false" parallel="classes">
 		<parameter name="username" value="mngr68763" />
 		<parameter name="password" value="R@ja136900" />
 
 		<!-- <packages> <package name="testcases.bfs.guru99tests"></package> </packages> 
 			</test> <test name="ClassLevelTest" preserve-order="true"> -->
-		<classes>
+		<classes >
 			<class name="testcases.bfs.guru99tests.TC027_Guru99HomePageFieldsFunc" />
 			<class name="testcases.bfs.guru99tests.TC025_Guru99HomePageLaunch" />
 			<class name="testcases.bfs.guru99tests.TC028_FalseLoginTest" />
 			<class name="testcases.bfs.guru99tests.TC029_ManagersMenuNavTest" />
 			<class name="testcases.bfs.guru99tests.TC030_BalanceEnqueryScreenNavTest"></class>
+			<class name="testcases.bfs.guru99tests.TC031_MiniStmtNavTest"></class>
+			<class name="testcases.bfs.guru99tests.TC032_ChangePWDScreenNav"></class>
+			<class name="testcases.bfs.guru99tests.TC033_ChangePwdPressReset"></class>
+			<class name="testcases.bfs.guru99tests.TC034_ChangePwdSuccessfully"></class>
 			
 		</classes>
 	</test>

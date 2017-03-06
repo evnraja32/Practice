@@ -8,13 +8,13 @@ import pages.bfs.guru99.Guru99BankHomePage;
 import util.TargetBrowser;
 import wrapper.TestNGPageFactoryWrapper;
 
-public class TC031_MiniStmtNavTest extends TestNGPageFactoryWrapper {
+public class TC032_ChangePWDScreenNav extends TestNGPageFactoryWrapper {
 
 	@BeforeClass
 	public void setWebPageCofig() {
-		testCaseName = "TC031 Mini Statement Screen Navigation Test";
-		testCaseDesc = "To Check whether the web page is properly navigating to Mini Statement Page";
-		browser = TargetBrowser.EDGE;
+		testCaseName = "TC032 Change Password Screen Navigation";
+		testCaseDesc = "To Check Page navigation to Change Password Screen";
+		browser = TargetBrowser.INTERNETEXPLORER;
 		url = "http://demo.guru99.com/V4";
 	}
 
@@ -26,7 +26,7 @@ public class TC031_MiniStmtNavTest extends TestNGPageFactoryWrapper {
 			.enterPassword(password)
 			.clickLoginBTN()
 			.fromManagersMenu()
-			.clickMiniStatementPageLink()
+			.clickChangePasswordPageLink()
 			.fromManagersMenu()
 			.clickLogOutPageLink();
 

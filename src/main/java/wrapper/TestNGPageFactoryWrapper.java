@@ -15,6 +15,7 @@ public class TestNGPageFactoryWrapper extends PageFactoryWrapper{
 	@BeforeSuite
 	public void beforeSuite() {
 		ExtentReporter.startResult();
+		loadObjProp();
 	}
 
 	@BeforeTest
