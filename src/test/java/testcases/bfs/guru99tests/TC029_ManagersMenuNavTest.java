@@ -10,27 +10,25 @@ import pages.bfs.guru99.transaction.BalanceEnquiryPage;
 import util.TargetBrowser;
 import wrapper.TestNGPageFactoryWrapper;
 
-public class TC029_ManagersMenuNavTest extends TestNGPageFactoryWrapper{
+public class TC029_ManagersMenuNavTest extends TestNGPageFactoryWrapper {
 
 	@BeforeClass
-	public void setWebPageCofig(){
+	public void setWebPageCofig() {
 		testCaseName = "TC029 Managers Menu Navigation Test";
 		testCaseDesc = "To Check whether the web page is properly navigating to all the Menu items displayed";
 		browser = TargetBrowser.FIREFOX;
 		url = "http://demo.guru99.com/V4";
 	}
 
-
 	@Test
-	@Parameters({"username","password"})
-	public void testMethod(String username,String password) {
+	@Parameters({ "username", "password" })
+	public void testMethod(String username, String password) {
 		try {
-		new Guru99BankHomePage()
-			.enterUserName(username)
+			new Guru99BankHomePage().enterUserName(username)
 			.enterPassword(password)
 			.clickLoginBTN()
 			.fromManagersMenu()
-			.clcikDeleteAccountPageLink()
+			/*.clcikDeleteAccountPageLink()
 			.fromManagersMenu()
 			.clickCustomisedStatementPageLink()
 			.fromManagersMenu()
@@ -39,21 +37,14 @@ public class TC029_ManagersMenuNavTest extends TestNGPageFactoryWrapper{
 			.clickBalanceEnquiryPageLink()
 			.fromManagersMenu()
 			.clickNewCustomerPageLink()
-			.fromManagersMenu()
+			.fromManagersMenu()*/
 			.clickLogOutPageLink()
 			.isHomePage();
-			
-			
-			
+
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-
-
-
-
-
 
 }
