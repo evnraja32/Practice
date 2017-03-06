@@ -1,5 +1,7 @@
 package pages.bfs.guru99.settings;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.support.PageFactory;
 
 import pages.bfs.guru99.Guru99BankHomePage;
@@ -23,7 +25,8 @@ public class LogOutPage extends PageFactoryWrapper {
 		}
 	}
 	
-	public Guru99BankHomePage isHomePage(){
+	public Guru99BankHomePage isHomePage() throws InterruptedException{
+		Thread.sleep(5000);
 		return new Guru99BankHomePage();
 	}
 

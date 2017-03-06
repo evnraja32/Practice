@@ -5,14 +5,14 @@
 		<parameter name="username" value="mngr68763" />
 		<parameter name="password" value="bYrEhUm" />
 
-		<packages>
-			<package name="testcases.bfs.guru99tests"></package>
-		</packages>
+	<!-- <packages> <package name="testcases.bfs.guru99tests"></package> </packages> 
+		</test> <test name="ClassLevelTest" preserve-order="true"> -->
+		<classes>
+			<!-- <class name="testcases.bfs.guru99tests.TC027_Guru99HomePageFieldsFunc" 
+				/> <class name="testcases.bfs.guru99tests.TC025_Guru99HomePageLaunch" /> 
+				<class name="testcases.bfs.guru99tests.TC028_FalseLoginTest" /> -->
+			<class name="testcases.bfs.guru99tests.TC029_ManagersMenuNavTest" />
+		</classes>
 	</test>
-	
-	<!-- <test name="ClassLevelTest" preserve-order="true"> <classes> <class 
-		name="testcases.bfs.guru99tests.TC027_Guru99HomePageFieldsFunc" /> <class 
-		name="testcases.bfs.guru99tests.TC025_Guru99HomePageLaunch" /> <class name="testcases.bfs.guru99tests.TC028_FalseLoginTest" 
-		/> </classes> </test> Test -->
 
 </suite> <!-- Suite -->
