@@ -52,10 +52,10 @@ public class ChangePasswordPage extends PageFactoryWrapper {
 		return new ChangePasswordPage();
 	}
 
-	public Guru99BankHomePage pressSubmitButton() {
+	public Guru99BankHomePage pressSubmitButton() throws InterruptedException {
 		locateElementByXpath(prop.getProperty("submitBT.LV"));
 		clickOnElement();
-
+		Thread.sleep(5000);
 		return new Guru99BankHomePage();
 	}
 
@@ -67,18 +67,21 @@ public class ChangePasswordPage extends PageFactoryWrapper {
 	}
 
 	public String getOldPassword() {
+		locateElementByXpath(prop.getProperty("oldPWDTF.LV"));
 
-		return driver.findElement(By.xpath(prop.getProperty("oldPWDTF.LV"))).getText();
+		return element.getText();
 	}
-
+	
 	public String getNewPassword() {
+		locateElementByXpath(prop.getProperty("newPWDTF.LV"));
 
-		return driver.findElement(By.xpath(prop.getProperty("newPWDTF.LV"))).getText();
+		return element.getText();
 	}
 
 	public String getConfirmPassword() {
+		locateElementByXpath(prop.getProperty("confirmPWDTF.LV"));
 
-		return driver.findElement(By.xpath(prop.getProperty("confirmPWDTF.LV"))).getText();
+		return element.getText();
 	}
 
 }

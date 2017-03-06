@@ -25,7 +25,7 @@ public class LogOutPage extends PageFactoryWrapper {
 	}
 
 	public Guru99BankHomePage isHomePage() throws InterruptedException {
-		Thread.sleep(5000);
+//		Thread.sleep(5000);
 		return new Guru99BankHomePage();
 	}
 
