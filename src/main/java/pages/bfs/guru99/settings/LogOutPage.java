@@ -1,10 +1,9 @@
 package pages.bfs.guru99.settings;
 
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.support.PageFactory;
 
 import pages.bfs.guru99.Guru99BankHomePage;
+import pages.bfs.guru99.ManagersMenu;
 import util.AlertAction;
 import util.ExtentReporter;
 import wrapper.PageFactoryWrapper;
@@ -24,13 +23,10 @@ public class LogOutPage extends PageFactoryWrapper {
 			ExtentReporter.reportStep("<p style=\"color:green\">\"" + expTitle + "\" Page Landed</p>", "PASS");
 		}
 	}
-	
-	public Guru99BankHomePage isHomePage() throws InterruptedException{
+
+	public Guru99BankHomePage isHomePage() throws InterruptedException {
 		Thread.sleep(5000);
 		return new Guru99BankHomePage();
 	}
 
-	/*public ManagersMenu fromManagersMenu() {
-		return new ManagersMenu();
-	}*/
 }

@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite" parallel="false">
-	<test name="PackageLevelTest" preserve-order="true">
+	<test name="PackageLevelTest" preserve-order="false">
 		<parameter name="username" value="mngr68763" />
-		<parameter name="password" value="bYrEhUm" />
+		<parameter name="password" value="R@ja136900" />
 
-	<!-- <packages> <package name="testcases.bfs.guru99tests"></package> </packages> 
-		</test> <test name="ClassLevelTest" preserve-order="true"> -->
+		<!-- <packages> <package name="testcases.bfs.guru99tests"></package> </packages> 
+			</test> <test name="ClassLevelTest" preserve-order="true"> -->
 		<classes>
-			<!-- <class name="testcases.bfs.guru99tests.TC027_Guru99HomePageFieldsFunc" 
-				/> <class name="testcases.bfs.guru99tests.TC025_Guru99HomePageLaunch" /> 
-				<class name="testcases.bfs.guru99tests.TC028_FalseLoginTest" /> -->
+			<class name="testcases.bfs.guru99tests.TC027_Guru99HomePageFieldsFunc" />
+			<class name="testcases.bfs.guru99tests.TC025_Guru99HomePageLaunch" />
+			<class name="testcases.bfs.guru99tests.TC028_FalseLoginTest" />
 			<class name="testcases.bfs.guru99tests.TC029_ManagersMenuNavTest" />
+			<class name="testcases.bfs.guru99tests.TC030_BalanceEnqueryScreenNavTest"></class>
+			
 		</classes>
 	</test>
 

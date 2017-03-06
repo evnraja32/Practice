@@ -8,13 +8,13 @@ import pages.bfs.guru99.Guru99BankHomePage;
 import util.TargetBrowser;
 import wrapper.TestNGPageFactoryWrapper;
 
-public class TC029_ManagersMenuNavTest extends TestNGPageFactoryWrapper {
+public class TC031_MiniaStmtNavTest extends TestNGPageFactoryWrapper {
 
 	@BeforeClass
 	public void setWebPageCofig() {
-		testCaseName = "TC029 Managers Menu Navigation Test";
-		testCaseDesc = "To Check whether the web page is properly navigating to all the Menu items displayed";
-		browser = TargetBrowser.FIREFOX;
+		testCaseName = "TC031 Mini Statement Screen Navigation Test";
+		testCaseDesc = "To Check whether the web page is properly navigating to Mini Statement Page";
+		browser = TargetBrowser.EDGE;
 		url = "http://demo.guru99.com/V4";
 	}
 
@@ -26,18 +26,9 @@ public class TC029_ManagersMenuNavTest extends TestNGPageFactoryWrapper {
 			.enterPassword(password)
 			.clickLoginBTN()
 			.fromManagersMenu()
-			.clcikDeleteAccountPageLink()
+			.clickMiniStatementPageLink()
 			.fromManagersMenu()
-			.clickCustomisedStatementPageLink()
-			.fromManagersMenu()
-			.clickNewAccountPageLink()
-			.fromManagersMenu()
-			.clickBalanceEnquiryPageLink()
-			.fromManagersMenu()
-			.clickNewCustomerPageLink()
-			.fromManagersMenu()
-			.clickLogOutPageLink()
-			.isHomePage();
+			.clickLogOutPageLink();
 
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block

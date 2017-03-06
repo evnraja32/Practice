@@ -1,8 +1,10 @@
 package wrapper;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.List;
+import java.util.Properties;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
@@ -39,6 +41,16 @@ public class PageFactoryWrapper {
 	private static String parentWindow = null;
 	private static Alert a = null;
 	protected static Select select = null;
+	protected static Properties prop = null;
+	
+	public static void loadObjProp(){
+		prop = new Properties();
+		try {
+			prop.load(new FileInputStream(new File("./src/main/resources/objectrepo/objRepo.properties")));
+		} catch (IOException e) {
+			printException(e, "Fail to load Object Repo Property file");
+		}
+	}
 
 	// ===== Browser ===================
 	public static void launchApp(String browser, String url) {
