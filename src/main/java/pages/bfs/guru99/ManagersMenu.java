@@ -18,6 +18,7 @@ import pages.bfs.guru99.transaction.DepositPage;
 import pages.bfs.guru99.transaction.FundTransferPage;
 import pages.bfs.guru99.transaction.MiniStatementPage;
 import pages.bfs.guru99.transaction.WithdrawalPage;
+import util.AlertAction;
 import wrapper.PageFactoryWrapper;
 
 public class ManagersMenu extends PageFactoryWrapper {
@@ -158,6 +159,8 @@ public class ManagersMenu extends PageFactoryWrapper {
 	public LogOutPage clickLogOutPageLink() throws InterruptedException {
 		logOutLink.click();
 		Thread.sleep(5000);
+		switchToWindowAlert();
+		manageAlert(AlertAction.ACCEPT);
 		return new LogOutPage();
 	}
 

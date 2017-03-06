@@ -46,12 +46,12 @@ public class Guru99BankHomePage extends PageFactoryWrapper {
 
 	public ManagerHomePage clickLoginBTN() throws InterruptedException{
 		loginBTN.click();
-
-		ExtentReporter.reportStep("Successfully Pressed Login Button","PASS");
-		Thread.sleep(5000);
+		Thread.sleep(5000);		
 		if(switchToWindowAlert()){
+			ExtentReporter.reportStep("Alert is getting displayed\n"+getAlertText(),"INFO");
 			throw new RuntimeException();
 		}else{
+			ExtentReporter.reportStep("Successfully Pressed Login Button","PASS");
 			return new ManagerHomePage();
 		}
 	}

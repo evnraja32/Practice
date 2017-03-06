@@ -452,6 +452,10 @@ public class PageFactoryWrapper {
 	public static void enterAlertText(String keysToSend) {
 		a.sendKeys(keysToSend);
 	}
+	
+	public static String getAlertText(){
+		return a.getText();
+	}
 	// ====== Handling Alerts ============
 
 	public static void printException(Throwable e, String errorMessage) {

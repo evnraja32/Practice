@@ -11,9 +11,6 @@ import wrapper.PageFactoryWrapper;
 public class LogOutPage extends PageFactoryWrapper {
 
 	public LogOutPage() {
-		switchToWindowAlert();
-		manageAlert(AlertAction.ACCEPT);
-
 		String expTitle = "Guru99 Bank Logout Output Page";
 		if (!verifyWindowTitle(expTitle)) {
 			ExtentReporter.reportStep("<p style=\"color:red\">Expected Page: " + expTitle + "<br>" + "Actual Page: "
@@ -25,7 +22,7 @@ public class LogOutPage extends PageFactoryWrapper {
 	}
 
 	public Guru99BankHomePage isHomePage() throws InterruptedException {
-//		Thread.sleep(5000);
+		 Thread.sleep(5000);
 		return new Guru99BankHomePage();
 	}
 

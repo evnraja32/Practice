@@ -46,7 +46,7 @@ public class ChangePasswordPage extends PageFactoryWrapper {
 	}
 
 	public ChangePasswordPage enterConfirmPassword(String confirmPassowrd) {
-		locateElementByXpath(prop.getProperty("confimrPWDTF.LV"));
+		locateElementByXpath(prop.getProperty("confirmPWDTF.LV"));
 		sendKeysToWebElement(confirmPassowrd);
 
 		return new ChangePasswordPage();
