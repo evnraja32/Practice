@@ -1,5 +1,6 @@
 package testcases.bfs.guru99tests;
 
+import org.openqa.selenium.UnhandledAlertException;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -26,19 +27,23 @@ public class TC029_ManagersMenuNavTest extends TestNGPageFactoryWrapper {
 			.enterUserName(username)
 			.enterPassword(password)
 			.clickLoginBTN()
-			/*.fromManagersMenu()
+			.fromManagersMenu()
 			.clcikDeleteAccountPageLink()
 			.fromManagersMenu()
 			.clickCustomisedStatementPageLink()
 			.fromManagersMenu()
 			.clickNewAccountPageLink()
 			.fromManagersMenu()
-			.clickBalanceEnquiryPageLink()*/
+			.clickBalanceEnquiryPageLink()
 			.fromManagersMenu()
 			.clickNewCustomerPageLink()
 			.fromManagersMenu()
 			.clickLogOutPageLink()
 			.isHomePage();
+		}catch( UnhandledAlertException e){
+			if (switchToWindowAlert()) {
+				System.out.println("Text on the Alert: " + getAlertText());
+			}
 
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block

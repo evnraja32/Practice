@@ -18,13 +18,13 @@ public class TC034_ChangePwdSuccessfully extends TestNGPageFactoryWrapper {
 		url = "http://demo.guru99.com/V4";
 	}
 
-	@Test
-	@Parameters({ "username", "password" })
-	public void testMethod(String username, String password) {
+	@Test(enabled=false)
+	@Parameters({ "username", "password","newPassword" })
+	public void testMethod(String username, String password,String newPassword) {
 		try {
 			 new Guru99BankHomePage().enterUserName(username)
 					.enterPassword(password).clickLoginBTN().fromManagersMenu().clickChangePasswordPageLink()
-					.enterOldPassword("RaJ@136900").enterNewPassword("Asdf#1243").enterConfirmPassword("Asdf#1243")
+					.enterOldPassword(password).enterNewPassword(newPassword).enterConfirmPassword(newPassword)
 					.pressSubmitButton().enterUserName(username).enterPassword(password).clickLoginBTN();
 
 			

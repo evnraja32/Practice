@@ -1,13 +1,13 @@
 package pages.bfs.guru99.settings;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.UnhandledAlertException;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
 import pages.bfs.guru99.Guru99BankHomePage;
 import pages.bfs.guru99.ManagersMenu;
+import util.AlertAction;
 import util.ExtentReporter;
 import wrapper.PageFactoryWrapper;
 
@@ -55,6 +55,15 @@ public class ChangePasswordPage extends PageFactoryWrapper {
 	public Guru99BankHomePage pressSubmitButton() throws InterruptedException {
 		locateElementByXpath(prop.getProperty("submitBT.LV"));
 		clickOnElement();
+
+		Thread.sleep(5000);
+
+		if (switchToWindowAlert()) {
+			ExtentReporter.reportStep("Alert Message: " + getAlertText() + "<br>Alert closed", "INFO");
+			manageAlert(AlertAction.ACCEPT);
+		} else {
+			ExtentReporter.reportStep("Failed handle the alert after submitting the new PWD", "FATAL");
+		}
 		Thread.sleep(5000);
 		return new Guru99BankHomePage();
 	}
@@ -71,7 +80,7 @@ public class ChangePasswordPage extends PageFactoryWrapper {
 
 		return element.getText();
 	}
-	
+
 	public String getNewPassword() {
 		locateElementByXpath(prop.getProperty("newPWDTF.LV"));
 

@@ -19,6 +19,7 @@ import pages.bfs.guru99.transaction.FundTransferPage;
 import pages.bfs.guru99.transaction.MiniStatementPage;
 import pages.bfs.guru99.transaction.WithdrawalPage;
 import util.AlertAction;
+import util.ExtentReporter;
 import wrapper.PageFactoryWrapper;
 
 public class ManagersMenu extends PageFactoryWrapper {
@@ -158,8 +159,9 @@ public class ManagersMenu extends PageFactoryWrapper {
 
 	public LogOutPage clickLogOutPageLink() throws InterruptedException {
 		logOutLink.click();
+//		ExtentReporter.reportStep("Clicked on Log out link", "INFO");
 		Thread.sleep(5000);
-		/*if (switchToWindowAlert()) {
+	/*	if (switchToWindowAlert()) {
 			manageAlert(AlertAction.ACCEPT);
 		}*/
 		return new LogOutPage();
