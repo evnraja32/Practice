@@ -29,6 +29,6 @@ public class TC026_AssertionsTestInTestNG {
 		Assert.assertEquals(true,true,"hard Assert Test 1");
 
 		Assert.assertEquals(true,false,"Hard Assert Test 2");
-
+		sa.assertAll();
 	}
 }

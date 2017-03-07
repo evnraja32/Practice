@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite" parallel="false">
-	<listeners>
+<!-- 	<listeners>
 		<listener class-name="testcases.listeners.guru99.TestFailureListener" />
-	</listeners>
-	<test name="SmokeTest" preserve-order="true" thread-count="5">
+	</listeners> -->
+	<test name="SmokeTest" preserve-order="true" thread-count="5"
+		enabled="false">
 		<parameter name="username" value="mngr68763" />
 		<parameter name="password" value="ASdF@1234" />
 		<parameter name="newPassword" value="aSdF@1234" />
-		
+
 
 		<classes>
 
@@ -23,6 +24,19 @@
 			<class name="testcases.bfs.guru99tests.TC034_ChangePwdSuccessfully"></class>
 
 		</classes>
+	</test>
+
+	<test name="Java">
+		<groups>
+			<run>
+				<include name="JavaCollections" />
+				<!-- <exclude name="JavaHashCollections" /> -->
+			</run>
+		</groups>
+
+		<packages>
+			<package name="testcases.testngtcs"></package>
+		</packages>
 	</test>
 
 </suite> <!-- Suite -->
