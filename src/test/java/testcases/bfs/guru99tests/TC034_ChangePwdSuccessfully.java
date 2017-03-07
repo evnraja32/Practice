@@ -24,7 +24,7 @@ public class TC034_ChangePwdSuccessfully extends TestNGPageFactoryWrapper {
 		try {
 			 new Guru99BankHomePage().enterUserName(username)
 					.enterPassword(password).clickLoginBTN().fromManagersMenu().clickChangePasswordPageLink()
-					.enterOldPassword("R@ja136900").enterNewPassword("RaJ@136900").enterConfirmPassword("RaJ@136900")
+					.enterOldPassword("RaJ@136900").enterNewPassword("Asdf#1243").enterConfirmPassword("Asdf#1243")
 					.pressSubmitButton().enterUserName(username).enterPassword(password).clickLoginBTN();
 
 			

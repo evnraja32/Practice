@@ -14,25 +14,26 @@ public class TC029_ManagersMenuNavTest extends TestNGPageFactoryWrapper {
 	public void setWebPageCofig() {
 		testCaseName = "TC029 Managers Menu Navigation Test";
 		testCaseDesc = "To Check whether the web page is properly navigating to all the Menu items displayed";
-		browser = TargetBrowser.FIREFOX;
+		browser = TargetBrowser.EDGE;
 		url = "http://demo.guru99.com/V4";
 	}
 
-	@Test
+	@Test()
 	@Parameters({ "username", "password" })
 	public void testMethod(String username, String password) {
 		try {
-			new Guru99BankHomePage().enterUserName(username)
+			new Guru99BankHomePage()
+			.enterUserName(username)
 			.enterPassword(password)
 			.clickLoginBTN()
-			.fromManagersMenu()
+			/*.fromManagersMenu()
 			.clcikDeleteAccountPageLink()
 			.fromManagersMenu()
 			.clickCustomisedStatementPageLink()
 			.fromManagersMenu()
 			.clickNewAccountPageLink()
 			.fromManagersMenu()
-			.clickBalanceEnquiryPageLink()
+			.clickBalanceEnquiryPageLink()*/
 			.fromManagersMenu()
 			.clickNewCustomerPageLink()
 			.fromManagersMenu()

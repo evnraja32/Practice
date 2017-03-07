@@ -159,8 +159,9 @@ public class ManagersMenu extends PageFactoryWrapper {
 	public LogOutPage clickLogOutPageLink() throws InterruptedException {
 		logOutLink.click();
 		Thread.sleep(5000);
-		switchToWindowAlert();
-		manageAlert(AlertAction.ACCEPT);
+		/*if (switchToWindowAlert()) {
+			manageAlert(AlertAction.ACCEPT);
+		}*/
 		return new LogOutPage();
 	}
 

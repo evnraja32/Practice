@@ -12,6 +12,9 @@ public class LogOutPage extends PageFactoryWrapper {
 
 	public LogOutPage() {
 		String expTitle = "Guru99 Bank Logout Output Page";
+		if (switchToWindowAlert()) {
+			manageAlert(AlertAction.ACCEPT);
+		}
 		if (!verifyWindowTitle(expTitle)) {
 			ExtentReporter.reportStep("<p style=\"color:red\">Expected Page: " + expTitle + "<br>" + "Actual Page: "
 					+ currentWindowTitle() + "</p>", "FATAL");
