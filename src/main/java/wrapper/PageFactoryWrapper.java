@@ -59,6 +59,7 @@ public class PageFactoryWrapper {
 		try {
 			if (browser.equals(TargetBrowser.FIREFOX)) {
 				System.setProperty("webdriver.gecko.driver", "./drivers/geckodriver-0.10.0.exe");
+				//Gecko driver 0.15 has released
 				driver = new FirefoxDriver();
 			} else if (browser.equals(TargetBrowser.CHROME)) {
 				System.setProperty("webdriver.chrome.driver", "./drivers/chromeV54/chromedriver.exe");
