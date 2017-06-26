@@ -1,4 +1,4 @@
-package pages;
+package oops.corejava;
 
 import java.util.ArrayList;
 import java.util.HashSet;
