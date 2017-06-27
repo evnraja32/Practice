@@ -385,13 +385,9 @@ public class GenericWrapperTemplate {
 
 	public RemoteWebDriver switchToLastWindow() {
 		try {
-			for (String eachWindow : prepareAllWindowHandlers()) { // for each
-																	// window in
-																	// window
-																	// handles
+			for (String eachWindow : prepareAllWindowHandlers()) { // for each window in window handles
 				if (!eachWindow.equals(parentWindow))
-					driver.switchTo().window(eachWindow); // we are Switching to
-															// respective window
+					driver.switchTo().window(eachWindow); // we are Switching to respective window
 			}
 			reportStatus("Window Switched to Last Window", "PASS");
 		} catch (NoSuchWindowException e) {

@@ -403,7 +403,7 @@ public class PageFactoryWrapper {
 		return driver;
 	}
 
-	public static RemoteWebDriver switchToFrameByNameOrID(WebElement frameElement) {
+	public static RemoteWebDriver switchToFrameByWebElement(WebElement frameElement) {
 
 		try {
 			driver.switchTo().frame(frameElement);
