@@ -58,7 +58,7 @@ public class ProjectWrapper{
 				System.setProperty("webdriver.gecko.driver", "./drivers/geckodriver.exe");
 				driver = new FirefoxDriver();
 			}else if(browser.equals(TargetBrowser.CHROME)){
-				System.setProperty("webdriver.chorme.driver", "./drivers/chromeV54/chromedriver.exe");
+				System.setProperty("webdriver.chorme.driver", "./drivers/chromedriver.exe");
 				driver= new ChromeDriver(capabilities);
 			}else if(browser.equals(TargetBrowser.INTERNETEXPLORER)){
 				System.setProperty("webdriver.ie.driver", "./drivers/IEDriverServer.exe");
@@ -74,8 +74,8 @@ public class ProjectWrapper{
 
 			ExtentReporter.reportStep(browser+" has initiated<br>Web Application: "+url+" successfully","PASS");
 		}catch(WebDriverException e){
-			ExtentReporter.reportStep("Failed to initiate Web Page: "+url+" through Browser : "+browser+
-					"<br>Plese find the details below:<br><p style=\"color:red;\">"+e.getMessage()+"</p>","FATAL");
+			ExtentReporter.reportStep("Failed to initiate Web Page: "+url+" <br>through Browser : "+browser+
+					"<br>Please find the details below:<br><p style=\"color:red;\">"+e.getMessage()+"</p>","FATAL");
 //			printException(e,"Unable to launch app");
 		}
 	}

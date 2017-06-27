@@ -27,6 +27,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
 import util.ExtentReporter;
 
@@ -95,6 +97,14 @@ public class GenericWrapperTemplate {
 		driver.manage().timeouts().implicitlyWait(time, TimeUnit.SECONDS);
 	}
 
+	public void fluentWait(int time){
+		FluentWait<RemoteWebDriver> fluentWait = new FluentWait<RemoteWebDriver>(driver)
+				.withTimeout(time, TimeUnit.SECONDS)
+				.pollingEvery(10, TimeUnit.SECONDS)
+				.ignoring(NoSuchElementException.class);
+				
+		fluentWait.until(ExpectedConditions.visibilityOf(element));
+	}
 	public void closeTheWindow() {
 		driver.close();
 	}
