@@ -58,8 +58,8 @@ public class PageFactoryWrapper {
 		capabilities.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
 		try {
 			if (browser.equals(TargetBrowser.FIREFOX)) {
-				System.setProperty("webdriver.gecko.driver", "./drivers/geckodriver-0.10.0.exe");
-				//Gecko driver 0.15 has released.
+				System.setProperty("webdriver.gecko.driver", "./drivers/geckodriver.exe");
+				//Gecko driver 0.17 has replaced.
 				driver = new FirefoxDriver();
 			} else if (browser.equals(TargetBrowser.CHROME)) {
 				System.setProperty("webdriver.chrome.driver", "./drivers/chromeV54/chromedriver.exe");
@@ -362,12 +362,8 @@ public class PageFactoryWrapper {
 	public static RemoteWebDriver switchToLastWindow() {
 
 		try {
-			for (String eachWindow : prepareAllWindowHandlers()) { // for each
-																	// window in
-																	// window
-																	// handles
-				driver.switchTo().window(eachWindow); // we are Switching to
-														// respective window
+			for (String eachWindow : prepareAllWindowHandlers()) { // for each window in window handles
+				driver.switchTo().window(eachWindow); // we are Switching to respective window
 			}
 		} catch (NoSuchWindowException e) {
 			printException(e, "Exception at getLast Window Method" + e.getMessage());
