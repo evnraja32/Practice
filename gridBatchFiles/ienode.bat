@@ -1,1 +1,1 @@
-java -jar selenium-server-standalone-2.52.0.jar -role node -hub http://192.168.0.104:4444/grid/register/ -port 1112 -browser browserName="internet explorer",maxInstances=5,version=11, -Dwebdriver.ie.driver="H:\SelBeginerGuide\drivers\IEDriverServer.exe"
+java -jar ./../lib/selenium-server-standalone-2.52.0.jar -role node -hub http://192.168.23.1:4444/grid/register/ -port 1112 -browser browserName="internet explorer",maxInstances=5,version=11, -Dwebdriver.ie.driver="./../drivers/IEDriverServer.exe"
