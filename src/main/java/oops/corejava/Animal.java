@@ -1,4 +1,4 @@
-package pages;
+package oops.corejava;
 
 public class Animal {
 	public void animalMethod1() {
