@@ -14,7 +14,7 @@ public class TC001_RestApiGetStatusCodes {
 		System.out.println(response.getStatusCode());
 		System.out.println(response.getStatusLine());
 
-		// url having some parameters.
+		// url having some parameters.€
 		response = RestAssured.get(
 				"http: // samples.openweathermap.org/data/2.5/weather?q=London,uk&appid=b1b15e88fa797225412429c1c50c122a1");
 		System.out.println(response.getStatusCode());
