@@ -9,7 +9,17 @@ public class Greater {
 		Greater greater = new Greater();
 		greater.perform();
 
-		klk = () -> System.out.println("jhgjhgh");
+		MyLambda klk = () -> System.out.println("jhgjhgh");
 
+		MyLambdaWithSignature doubleIntFunction = (int a) -> a * 2;
 	}
+}
+
+interface MyLambda {
+	void voidFun();
+}
+
+interface MyLambdaWithSignature {
+
+	int add(int a);
 }
