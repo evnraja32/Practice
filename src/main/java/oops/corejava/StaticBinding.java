@@ -1,4 +1,4 @@
-package pages;
+package oops.corejava;
 
 public class StaticBinding {
 	public static void callEat(Animal animal) {

@@ -25,7 +25,7 @@ public class TC016_ExtentReportTestNG{
 	@BeforeClass
 	public void beforeClass(){
 		
-		testCaseDesc = "Sameple Test Case to test the execution flow of ExtentReport using the TestNG Framework";
+		testCaseDesc = "Sample Test Case to test the execution flow of ExtentReport using the TestNG Framework";
 		System.out.println("before class");
 	}
 
